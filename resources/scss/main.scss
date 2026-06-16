@@ -20,13 +20,49 @@
 .footer-logo img,
 .logos img {
   width: auto;
-  height: 76px;
+  height: 108px;
   object-fit: contain;
+}
+
+.site-logo img {
+  height: 112px;
+}
+
+.mobile-logo img {
+  height: 74px;
+}
+
+.footer-logo img,
+.logos img {
+  height: 94px;
 }
 
 .footer-logo img,
 .logos img {
   border-radius: 18px;
+}
+
+.btn-area-author ul,
+.footer-social ul,
+.social-links-mobile-menu ul {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-area-author ul li a,
+.footer-social ul li a,
+.social-links-mobile-menu ul li a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 21px;
+}
+
+.btn-area-author ul li a {
+  width: 48px;
+  height: 48px;
+  margin: 0;
 }
 
 .contact-quick-links {
