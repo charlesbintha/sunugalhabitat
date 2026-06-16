@@ -7,6 +7,22 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/produits', function () {
+    $products = array_values(config('products.items', []));
+
+    return view('products.index', compact('products'));
+})->name('products.index');
+
+Route::get('/produits/{slug}', function (string $slug) {
+    $products = config('products.items', []);
+    abort_unless(isset($products[$slug]), 404);
+
+    return view('products.show', [
+        'product' => $products[$slug],
+        'products' => array_values($products),
+    ]);
+})->name('products.show');
+
 // apartment
 Route::get('/apartment/left', function () {
     return view('apartment.left');

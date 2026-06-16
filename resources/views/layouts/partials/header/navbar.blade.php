@@ -13,6 +13,7 @@
                                 <li><a href="{{ url('/') }}">Accueil</a></li>
                                 <li><a href="{{ url('/#about') }}">Qui sommes-nous ?</a></li>
                                 <li><a href="{{ url('/#services') }}">Nos services</a></li>
+                                <li><a href="{{ route('products.index') }}">Nos produits</a></li>
                                 <li><a href="{{ url('/#why-us') }}">Pourquoi nous choisir ?</a></li>
                                 <li><a href="{{ url('/pages/contact') }}">Contact</a></li>
                             </ul>
@@ -63,6 +64,7 @@
             <li><a href="{{ url('/') }}">Accueil</a></li>
             <li><a href="{{ url('/#about') }}">Qui sommes-nous ?</a></li>
             <li><a href="{{ url('/#services') }}">Nos services</a></li>
+            <li><a href="{{ route('products.index') }}">Nos produits</a></li>
             <li><a href="{{ url('/#why-us') }}">Pourquoi nous choisir ?</a></li>
             <li><a href="{{ url('/pages/contact') }}">Contact</a></li>
         </ul>

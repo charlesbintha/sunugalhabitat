@@ -216,7 +216,7 @@
           <div class="heading3 text-center space-margin60">
             <h5 data-aos="fade-left" data-aos-duration="800">Nos services</h5>
             <div class="space20"></div>
-            <h2 class="text-anime-style-3">Trois metiers, un seul partenaire de confiance</h2>
+            <h2 class="text-anime-style-3">Quatre leviers, un seul partenaire de confiance</h2>
           </div>
         </div>
       </div>
@@ -286,6 +286,59 @@
     </div>
   </div>
   <!-- ===== SERVICE AREA ENDS ======= -->
+
+  <!-- ===== PRODUCTS AREA STARTS ======= -->
+  <div class="apartment-inner2-section-area sp7 bg2" id="products">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 m-auto">
+          <div class="heading3 text-center space-margin60">
+            <h5 data-aos="fade-left" data-aos-duration="800">Nos produits</h5>
+            <div class="space20"></div>
+            <h2 class="text-anime-style-3">Une selection de biens a explorer</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        @foreach (collect(config('products.items'))->take(4) as $product)
+          <div class="col-lg-3 col-md-6" data-aos="zoom-in-up" data-aos-duration="{{ 800 + ($loop->index * 100) }}">
+            <div class="apartment-boxarea">
+              <div class="img1">
+                <img src="{{ $product['card_image'] }}" alt="{{ $product['title'] }}" />
+              </div>
+              <div class="content-area">
+                <a href="{{ route('products.show', $product['slug']) }}">{{ $product['title'] }}</a>
+                <div class="space16"></div>
+                <ul>
+                  <li>
+                    <a href="#"><img src="/img/icons/bed-icon1.svg" alt="" />{{ $product['beds'] }}</a> <span>|</span>
+                  </li>
+                  <li>
+                    <a href="#"><img src="/img/icons/bat-icon1.svg" alt="" />{{ $product['baths'] }}</a> <span>|</span>
+                  </li>
+                  <li>
+                    <a href="#"><img src="/img/icons/squre-icon1.svg" alt="" />{{ $product['surface'] }}</a>
+                  </li>
+                </ul>
+                <div class="space16"></div>
+                <p>{{ $product['location'] }}</p>
+              </div>
+              <div class="arrow">
+                <a href="{{ route('products.show', $product['slug']) }}">Voir</a>
+              </div>
+            </div>
+          </div>
+        @endforeach
+      </div>
+      <div class="space40"></div>
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <a href="{{ route('products.index') }}" class="header-btn4">Voir tous les produits</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ===== PRODUCTS AREA ENDS ======= -->
 
   <!-- ===== TRUST AREA STARTS ======= -->
   <div class="about3-section-area sp6">

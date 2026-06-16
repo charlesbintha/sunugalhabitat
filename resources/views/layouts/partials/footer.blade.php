@@ -90,6 +90,8 @@
                             </div>
                             <div class="footer-menu">
                                 <ul>
+                                    <li><a href="{{ route('products.index') }}">Nos produits</a></li>
+                                    <li class="space24"></li>
                                     <li><a href="{{ url('/#why-us') }}">Pourquoi nous choisir ?</a></li>
                                     <li class="space24"></li>
                                     <li><a href="{{ url('/pages/contact') }}">Contact</a></li>
