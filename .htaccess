@@ -1,0 +1,13 @@
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Block direct access to hidden files and common project metadata.
+    RewriteRule "(^|/)\." - [F,L]
+    RewriteRule ^(artisan|composer\.(json|lock)|package(-lock)?\.json|phpunit\.xml|README\.md|vite\.config\.js|yarn\.lock)$ - [F,L,NC]
+
+    # Serve the Laravel public directory when the hosting root points to the project root.
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
