@@ -18,17 +18,20 @@
                 <img src="/img/elements/elements3.png" alt="" />
               </div>
               <div class="header-heading2">
-                <h5><i class="fa-solid fa-location-dot"></i>538 Joanie Fort Apt. 933 Louisiana</h5>
+                <h5><i class="fa-solid fa-location-dot"></i>Dakar Point E</h5>
                 <div class="space20"></div>
-                <h2>Welcome to Your Luxurious Haven</h2>
+                <h2>Sunugal Habitat, votre gestion locative de proximite</h2>
                 <div class="space20"></div>
-                <p>Our exclusive property offers a seamless blend of luxury to and comfort, designed to meet your every need. From the</p>
+                <p>
+                  Nous trouvons le locataire, nous encaissons, puis nous vous versons vos loyers.
+                  Vous gardez le controle, nous gerons le quotidien.
+                </p>
                 <div class="space32"></div>
                 <div class="btn-area1">
-                  <a href="{{ url('/pages/contact') }}" class="header-btn3">Schedule A Visit</a>
-                  <a href="https://www.youtube.com/watch?v=Y8XpQpW5OVY" class="popup-youtube">
-                    <span class="play-btn"><i class="fa-solid fa-play"></i></span>
-                    <span class="text">Video</span>
+                  <a href="{{ url('/pages/contact') }}" class="header-btn3">Nous contacter</a>
+                  <a href="https://wa.me/221781644156" target="_blank" rel="noopener noreferrer">
+                    <span class="play-btn"><i class="fa-brands fa-whatsapp"></i></span>
+                    <span class="text">WhatsApp</span>
                   </a>
                 </div>
               </div>
@@ -39,12 +42,12 @@
             <div class="auhtor-box">
               <div class="others-box">
                 <div class="img3">
-                  <img src="/img/all-images/others/others-img1.png" alt="" />
+                  <img src="/img/logo/sunugal-logo.jpeg" alt="Sunugal Habitat" />
                 </div>
                 <div class="text">
-                  <h3>Luxury Suite Villa</h3>
+                  <h3>Rassidou Sow</h3>
                   <div class="space10"></div>
-                  <p>$1.800,000</p>
+                  <p>Agent Immobilier Agree</p>
                 </div>
               </div>
             </div>
@@ -68,17 +71,20 @@
                 <img src="/img/elements/elements3.png" alt="" />
               </div>
               <div class="header-heading2">
-                <h5><i class="fa-solid fa-location-dot"></i>538 Joanie Fort Apt. 933 Louisiana</h5>
+                <h5><i class="fa-solid fa-location-dot"></i>En face UCAD</h5>
                 <div class="space20"></div>
-                <h2>Welcome to Your Luxurious Haven</h2>
+                <h2>Un syndic de copropriete clair, reactif et present</h2>
                 <div class="space20"></div>
-                <p>Our exclusive property offers a seamless blend of luxury to and comfort, designed to meet your every need. From the</p>
+                <p>
+                  Charges, travaux, suivi de l'immeuble et coordination du quotidien:
+                  nous organisons la copropriete avec des comptes-rendus simples et utiles.
+                </p>
                 <div class="space32"></div>
                 <div class="btn-area1">
-                  <a href="{{ url('/pages/contact') }}" class="header-btn3">Schedule A Visit</a>
-                  <a href="https://www.youtube.com/watch?v=Y8XpQpW5OVY" class="popup-youtube">
-                    <span class="play-btn"><i class="fa-solid fa-play"></i></span>
-                    <span class="text">Video</span>
+                  <a href="{{ url('/#services') }}" class="header-btn3">Voir nos services</a>
+                  <a href="{{ url('/pages/contact') }}">
+                    <span class="play-btn"><i class="fa-solid fa-phone"></i></span>
+                    <span class="text">Contact</span>
                   </a>
                 </div>
               </div>
@@ -92,9 +98,9 @@
                   <img src="/img/all-images/others/others-img1.png" alt="" />
                 </div>
                 <div class="text">
-                  <h3>Luxury Suite Villa</h3>
+                  <h3>Point E, Dakar</h3>
                   <div class="space10"></div>
-                  <p>$1.800,000</p>
+                  <p>Compte-rendu mensuel + photos</p>
                 </div>
               </div>
             </div>
@@ -118,17 +124,20 @@
                 <img src="/img/elements/elements3.png" alt="" />
               </div>
               <div class="header-heading2">
-                <h5><i class="fa-solid fa-location-dot"></i>538 Joanie Fort Apt. 933 Louisiana</h5>
+                <h5><i class="fa-solid fa-location-dot"></i>Sunugal Habitat</h5>
                 <div class="space20"></div>
-                <h2>Welcome to Your Luxurious Haven</h2>
+                <h2>Vente & achat avec estimation juste et securite juridique</h2>
                 <div class="space20"></div>
-                <p>Our exclusive property offers a seamless blend of luxury to and comfort, designed to meet your every need. From the</p>
+                <p>
+                  Nous pilotons les visites qualifiees, la negociation et la securisation des dossiers
+                  pour que chaque transaction avance sans surprise.
+                </p>
                 <div class="space32"></div>
                 <div class="btn-area1">
-                  <a href="{{ url('/pages/contact') }}" class="header-btn3">Schedule A Visit</a>
-                  <a href="https://www.youtube.com/watch?v=Y8XpQpW5OVY" class="popup-youtube">
-                    <span class="play-btn"><i class="fa-solid fa-play"></i></span>
-                    <span class="text">Video</span>
+                  <a href="{{ url('/#why-us') }}" class="header-btn3">Pourquoi nous choisir ?</a>
+                  <a href="mailto:contact@sunugalhabitat.sn">
+                    <span class="play-btn"><i class="fa-solid fa-envelope"></i></span>
+                    <span class="text">Email</span>
                   </a>
                 </div>
               </div>
@@ -139,12 +148,12 @@
             <div class="auhtor-box">
               <div class="others-box">
                 <div class="img3">
-                  <img src="/img/all-images/others/others-img1.png" alt="" />
+                  <img src="/img/all-images/others/others-img3.png" alt="" />
                 </div>
                 <div class="text">
-                  <h3>Luxury Suite Villa</h3>
+                  <h3>Mandat clair</h3>
                   <div class="space10"></div>
-                  <p>$1.800,000</p>
+                  <p>Commission juste, pas de surprise</p>
                 </div>
               </div>
             </div>
@@ -155,8 +164,8 @@
   </div>
   <!-- ===== HERO AREA ENDS ======= -->
 
-  <!-- ===== PROPERTY AREA STARTS ======= -->
-  <div class="property3-section-area sp6">
+  <!-- ===== ABOUT AREA STARTS ======= -->
+  <div class="property3-section-area sp6" id="about">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6">
@@ -175,33 +184,39 @@
         <div class="col-lg-1"></div>
         <div class="col-lg-5">
           <div class="property-content heading3">
-            <h5 data-aos="fade-left" data-aos-duration="800">Property Overview</h5>
+            <h5 data-aos="fade-left" data-aos-duration="800">Qui sommes-nous ?</h5>
             <div class="space20"></div>
-            <h2 class="text-anime-style-3">Elegance Every Detail Welcome Suite Villa</h2>
+            <h2 class="text-anime-style-3">Votre partenaire immobilier de proximite au Point E</h2>
             <div class="space16"></div>
-            <p data-aos="fade-left" data-aos-duration="900">Experience the pinnacle of luxury living at our exclusive property, where every detail has been meticulously crafted to provide an unparalleled retreat. Nestled in the heart of, this haven offers.</p>
+            <p data-aos="fade-left" data-aos-duration="900">
+              Sunugal Habitat est enraciné a Dakar et gere votre bien comme si c'etait le notre.
+              Nous intervenons avec une approche simple: presence locale, execution rapide et communication claire.
+            </p>
             <div class="space16"></div>
-            <p data-aos="fade-left" data-aos-duration="1000">Discover the essence of luxury our exclusive property in Dallas, where timeless elegance and modern best comfort converge.</p>
+            <p data-aos="fade-left" data-aos-duration="1000">
+              Que ce soit pour un appartement, un immeuble ou une transaction, nous restons votre interlocuteur
+              unique pour faire avancer les choses proprement et sans stress.
+            </p>
             <div class="space32"></div>
             <div class="btn-area1" data-aos="fade-left" data-aos-duration="1200">
-              <a href="{{ url('/apartment/v1') }}" class="header-btn4">View Our Property</a>
+              <a href="{{ url('/pages/contact') }}" class="header-btn4">Parler de mon bien</a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- ===== PROPERTY AREA ENDS ======= -->
+  <!-- ===== ABOUT AREA ENDS ======= -->
 
   <!-- ===== SERVICE AREA STARTS ======= -->
-  <div class="service3-section-area sp1">
+  <div class="service3-section-area sp1" id="services">
     <div class="container">
       <div class="row">
         <div class="col-lg-6 m-auto">
           <div class="heading3 text-center space-margin60">
-            <h5 data-aos="fade-left" data-aos-duration="800">Villa amenities</h5>
+            <h5 data-aos="fade-left" data-aos-duration="800">Nos services</h5>
             <div class="space20"></div>
-            <h2 class="text-anime-style-3">Our Property Amenities</h2>
+            <h2 class="text-anime-style-3">Trois metiers, un seul partenaire de confiance</h2>
           </div>
         </div>
       </div>
@@ -213,9 +228,9 @@
             </div>
             <div class="space32"></div>
             <div class="content-area">
-              <a href="{{ url('/apartment/single') }}">New Construction</a>
+              <a href="{{ url('/pages/contact') }}">Gestion locative</a>
               <div class="space18"></div>
-              <p>Discover the epitome of luxury living at Luxury, every detail .</p>
+              <p>On trouve le locataire, on encaisse et on vous verse. Zero stress.</p>
               <h3>01</h3>
             </div>
           </div>
@@ -229,11 +244,9 @@
             </div>
             <div class="space32"></div>
             <div class="content-area">
-              <a href="{{ url('/apartment/single') }}">Swimming Pool</a>
+              <a href="{{ url('/pages/contact') }}">Syndic de copropriete</a>
               <div class="space18"></div>
-              <p>
-                Explore our meticulously best <br class="d-lg-block d-block" /> designed spaces and indulge.
-              </p>
+              <p>Nous gerons votre immeuble, les charges et le suivi des travaux.</p>
               <h3>02</h3>
             </div>
           </div>
@@ -246,11 +259,9 @@
             </div>
             <div class="space32"></div>
             <div class="content-area">
-              <a href="{{ url('/apartment/single') }}">Fitness Facilities</a>
+              <a href="{{ url('/pages/contact') }}">Vente & achat</a>
               <div class="space18"></div>
-              <p>
-                Uncover the essence of luxury <br class="d-lg-block d-block" /> as you explore our exclusive.
-              </p>
+              <p>Estimation juste, visites qualifiees et securite juridique.</p>
               <h3>03</h3>
             </div>
           </div>
@@ -264,11 +275,9 @@
             </div>
             <div class="space32"></div>
             <div class="content-area">
-              <a href="{{ url('/apartment/single') }}">Eco Construction</a>
+              <a href="{{ url('/pages/contact') }}">Suivi local</a>
               <div class="space18"></div>
-              <p>
-                Step into sophistication and <br class="d-lg-block d-block" /> serenity at new construction.
-              </p>
+              <p>Compte-rendu mensuel, photos et interlocuteur present a Point E.</p>
               <h3>04</h3>
             </div>
           </div>
@@ -278,15 +287,15 @@
   </div>
   <!-- ===== SERVICE AREA ENDS ======= -->
 
-  <!-- ===== ABOUT AREA STARTS ======= -->
+  <!-- ===== TRUST AREA STARTS ======= -->
   <div class="about3-section-area sp6">
     <div class="container">
       <div class="row">
         <div class="col-lg-5 m-auto">
           <div class="about-header text-center heading3 space-margin60">
-            <h5 data-aos="fade-left" data-aos-duration="800">our best properties</h5>
+            <h5 data-aos="fade-left" data-aos-duration="800">Enracines dans la confiance</h5>
             <div class="space20"></div>
-            <h2 class="text-anime-style-3">Explore Our Premier Of Single Property Retreat</h2>
+            <h2 class="text-anime-style-3">Une presence locale au service de votre patrimoine</h2>
           </div>
         </div>
       </div>
@@ -302,44 +311,28 @@
             <div class="img1 reveal image-anime">
               <img src="/img/all-images/about/about-img3.png" alt="" />
             </div>
-            <div class="img1 reveal image-anime">
-              <img src="/img/all-images/about/about-img3.png" alt="" />
-            </div>
-
-            <div class="img1 reveal image-anime">
-              <img src="/img/all-images/about/about-img3.png" alt="" />
-            </div>
-            <div class="img1 reveal image-anime">
-              <img src="/img/all-images/about/about-img3.png" alt="" />
-            </div>
-            <div class="img1 reveal image-anime">
-              <img src="/img/all-images/about/about-img3.png" alt="" />
-            </div>
-            <div class="img1 reveal image-anime">
-              <img src="/img/all-images/about/about-img3.png" alt="" />
-            </div>
           </div>
           <div class="space30"></div>
           <div class="row">
             <div class="col-lg-6 col-md-6">
               <div class="experience-box">
-                <h2><span class="counter">25</span>+</h2>
+                <h2>Point E</h2>
                 <div class="space12"></div>
-                <p>Years Of Experience</p>
+                <p>Une equipe ancree a Dakar</p>
                 <div class="space20"></div>
                 <img src="/img/all-images/about/about-img6.png" alt="" />
                 <div class="space18"></div>
-                <p>Our Happy Clients</p>
+                <p>Suivi local et reactivite terrain</p>
               </div>
               <div class="space30 d-md-none d-block"></div>
             </div>
             <div class="col-lg-6 col-md-6">
               <div class="about-video-area">
                 <div class="img1 image-anime reveal">
-                  <a href="https://www.youtube.com/watch?v=Y8XpQpW5OVY" class="popup-youtube"><img src="/img/all-images/about/about-img5.png" alt="" /></a>
+                  <a href="https://wa.me/221781644156" target="_blank" rel="noopener noreferrer"><img src="/img/all-images/about/about-img5.png" alt="" /></a>
                 </div>
                 <div class="play-btn">
-                  <a href="https://www.youtube.com/watch?v=Y8XpQpW5OVY" class="popup-youtube"><i class="fa-solid fa-play"></i></a>
+                  <a href="https://wa.me/221781644156" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
               </div>
             </div>
@@ -353,22 +346,22 @@
             </div>
             <div class="content-area">
               <div class="text">
-                <a href="{{ url('/apartment/single') }}">Luxury Suite Villa</a>
+                <a href="{{ url('/pages/contact') }}">Sunugal Habitat</a>
                 <div class="space20"></div>
                 <ul>
                   <li>
-                    <a href="#"><img src="/img/icons/bed-icon1.svg" alt="" /> x2</a> <span>|</span>
+                    <a href="#"><img src="/img/icons/bed-icon1.svg" alt="" /> Point E</a> <span>|</span>
                   </li>
                   <li>
-                    <a href="#"><img src="/img/icons/bat-icon1.svg" alt="" /> x2</a> <span>|</span>
+                    <a href="#"><img src="/img/icons/bat-icon1.svg" alt="" /> Reactif</a> <span>|</span>
                   </li>
                   <li>
-                    <a href="#"><img src="/img/icons/squre-icon1.svg" alt="" /> 2000 sq</a>
+                    <a href="#"><img src="/img/icons/squre-icon1.svg" alt="" /> Transparent</a>
                   </li>
                 </ul>
               </div>
               <div class="arrow">
-                <a href="{{ url('/apartment/single') }}"><i class="fa-solid fa-arrow-right"></i></a>
+                <a href="{{ url('/pages/contact') }}"><i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
             <div class="elements3">
@@ -379,17 +372,17 @@
       </div>
     </div>
   </div>
-  <!-- ===== ABOUT AREA ENDS ======= -->
+  <!-- ===== TRUST AREA ENDS ======= -->
 
-  <!-- ===== GALLERY AREA STARTS ======= -->
+  <!-- ===== LOCAL AREA STARTS ======= -->
   <div class="gallery3-section-area">
     <div class="container">
       <div class="row">
         <div class="col-lg-5 m-auto">
           <div class="gallery-header heading2 text-center">
-            <h5 data-aos="fade-left" data-aos-duration="800">Building Gallery</h5>
+            <h5 data-aos="fade-left" data-aos-duration="800">Dakar Point E</h5>
             <div class="space20"></div>
-            <h2 class="text-anime-style-3">Residence Building View</h2>
+            <h2 class="text-anime-style-3">Une agence proche de vos biens et de vos decisions</h2>
           </div>
         </div>
       </div>
@@ -400,7 +393,7 @@
       <div class="row">
         <div class="col-lg-10 m-auto">
           <div class="rotate-img">
-            <iframe src="https://momento360.com/e/u/163e1a90974845d988fa0ec66e9b1859?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium&display-plan=true"></iframe>
+            <img src="/img/all-images/gallery/gallery-img14.png" alt="" />
             <img src="/img/elements/elements3.png" alt="" class="elements3" />
           </div>
         </div>
@@ -409,24 +402,25 @@
   </div>
   <div class="space100 d-lg-block d-none"></div>
   <div class="space50 d-lg-none d-block"></div>
-  <!-- ===== GALLERY AREA ENDS ======= -->
+  <!-- ===== LOCAL AREA ENDS ======= -->
 
-  <!-- ===== TESTIMONIAL AREA STARTS ======= -->
-  <div class="testimonial3-section-area sp6">
+  <!-- ===== WHY US AREA STARTS ======= -->
+  <div class="testimonial3-section-area sp6" id="why-us">
     <div class="container">
       <div class="row">
         <div class="col-lg-5">
           <div class="testimonia-header heading3">
-            <h5 data-aos="fade-left" data-aos-duration="800">client feedback</h5>
+            <h5 data-aos="fade-left" data-aos-duration="800">Pourquoi nous choisir ?</h5>
             <div class="space20"></div>
-            <h2 class="text-anime-style-3">Hear What Our Client Say About Property</h2>
+            <h2 class="text-anime-style-3">Reactivite, transparence et confiance</h2>
             <div class="space16"></div>
             <p data-aos="fade-left" data-aos-duration="1000">
-              Indulge in the epitome of luxury living at Luxury, where every <br class="d-lg-block d-none" /> amenity is meticulously designed to elevate your lifestyle.
+              Nous sommes a Point E, pas a distance. Vous recevez un suivi clair, un mandat lisible
+              et une relation de travail construite sur des engagements simples.
             </p>
             <div class="space32"></div>
             <div class="btn-area1" data-aos="fade-left" data-aos-duration="1200">
-              <a href="{{ url('/pages/testimonial') }}" class="header-btn4">View All Testimonials</a>
+              <a href="{{ url('/pages/contact') }}" class="header-btn4">Nous joindre</a>
             </div>
           </div>
           <div class="space86"></div>
@@ -435,7 +429,7 @@
               <img src="/img/all-images/testimonial/testimonial-img3.png" alt="" />
             </div>
             <div class="icons">
-              <a href="https://www.youtube.com/watch?v=Y8XpQpW5OVY" class="popup-youtube"><i class="fa-solid fa-play"></i></a>
+              <a href="https://wa.me/221781644156" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
           </div>
         </div>
@@ -450,8 +444,8 @@
                       <img src="/img/all-images/testimonial/testimonial-img4.png" alt="" />
                     </div>
                     <div class="text">
-                      <a href="#">Alexy Queen</a>
-                      <p>Happy Client</p>
+                      <a href="#">Reactivite</a>
+                      <p>Point E, Dakar</p>
                     </div>
                   </div>
                   <div class="quito">
@@ -459,28 +453,19 @@
                   </div>
                 </div>
                 <div class="space24"></div>
-                <span>Highly recommend Suite Luxury Suite Villa!</span>
+                <span>Une equipe locale, joignable et presente.</span>
                 <div class="space16"></div>
-                <p>“After staying at Luxury, I can confidently say it was one of the most luxurious best experiences of luxury villa.”</p>
+                <p>Nous suivons les situations rapidement parce que nous sommes sur place, au plus proche de vos biens et de vos locataires.</p>
                 <div class="space24"></div>
                 <ul>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
+                  <li><i class="fa-solid fa-star"></i></li>
+                  <li><i class="fa-solid fa-star"></i></li>
+                  <li><i class="fa-solid fa-star"></i></li>
+                  <li><i class="fa-solid fa-star"></i></li>
+                  <li><i class="fa-solid fa-star"></i></li>
                 </ul>
               </div>
+
               <div class="testimonial-vertical">
                 <div class="verical-boxarea">
                   <div class="images-area">
@@ -488,8 +473,8 @@
                       <img src="/img/all-images/testimonial/testimonial-img5.png" alt="" />
                     </div>
                     <div class="text">
-                      <a href="#">Jofra Archer</a>
-                      <p>Happy Client</p>
+                      <a href="#">Transparence</a>
+                      <p>Suivi mensuel</p>
                     </div>
                   </div>
                   <div class="quito">
@@ -497,28 +482,19 @@
                   </div>
                 </div>
                 <div class="space24"></div>
-                <span>Unforgettable Experience Of Luxury & Comfort!</span>
+                <span>Compte-rendu clair et photos de suivi.</span>
                 <div class="space16"></div>
-                <p>"Celebrated my anniversary at Property Villa, and it was beyond magical. The attention to detail, the of serene.”</p>
+                <p>Vous savez ce qui a ete fait, ce qui reste a faire et comment avance la gestion de votre bien, sans zone d'ombre.</p>
                 <div class="space24"></div>
                 <ul>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
+                  <li><i class="fa-solid fa-star"></i></li>
+                  <li><i class="fa-solid fa-star"></i></li>
+                  <li><i class="fa-solid fa-star"></i></li>
+                  <li><i class="fa-solid fa-star"></i></li>
+                  <li><i class="fa-solid fa-star"></i></li>
                 </ul>
               </div>
+
               <div class="testimonial-vertical">
                 <div class="verical-boxarea">
                   <div class="images-area">
@@ -526,8 +502,8 @@
                       <img src="/img/all-images/testimonial/testimonial-img4.png" alt="" />
                     </div>
                     <div class="text">
-                      <a href="#">Alexy Queen</a>
-                      <p>Happy Client</p>
+                      <a href="#">Confiance</a>
+                      <p>Mandat clair</p>
                     </div>
                   </div>
                   <div class="quito">
@@ -535,140 +511,16 @@
                   </div>
                 </div>
                 <div class="space24"></div>
-                <span>Highly recommend Suite Luxury Suite Villa!</span>
+                <span>Commission juste, cadre propre, pas de surprise.</span>
                 <div class="space16"></div>
-                <p>“After staying at Luxury, I can confidently say it was one of the most luxurious best experiences of luxury villa.”</p>
+                <p>Nous clarifions les engagements, la remuneration et les etapes de mission des le debut pour securiser la relation.</p>
                 <div class="space24"></div>
                 <ul>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
-                </ul>
-              </div>
-              <div class="testimonial-vertical">
-                <div class="verical-boxarea">
-                  <div class="images-area">
-                    <div class="img1">
-                      <img src="/img/all-images/testimonial/testimonial-img5.png" alt="" />
-                    </div>
-                    <div class="text">
-                      <a href="#">Jofra Archer</a>
-                      <p>Happy Client</p>
-                    </div>
-                  </div>
-                  <div class="quito">
-                    <img src="/img/icons/quoto-icon2.svg" alt="" />
-                  </div>
-                </div>
-                <div class="space24"></div>
-                <span>Unforgettable Experience Of Luxury & Comfort!</span>
-                <div class="space16"></div>
-                <p>"Celebrated my anniversary at Property Villa, and it was beyond magical. The attention to detail, the of serene.”</p>
-                <div class="space24"></div>
-                <ul>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
-                </ul>
-              </div>
-              <div class="testimonial-vertical">
-                <div class="verical-boxarea">
-                  <div class="images-area">
-                    <div class="img1">
-                      <img src="/img/all-images/testimonial/testimonial-img4.png" alt="" />
-                    </div>
-                    <div class="text">
-                      <a href="#">Alexy Queen</a>
-                      <p>Happy Client</p>
-                    </div>
-                  </div>
-                  <div class="quito">
-                    <img src="/img/icons/quoto-icon2.svg" alt="" />
-                  </div>
-                </div>
-                <div class="space24"></div>
-                <span>Highly recommend Suite Luxury Suite Villa!</span>
-                <div class="space16"></div>
-                <p>“After staying at Luxury, I can confidently say it was one of the most luxurious best experiences of luxury villa.”</p>
-                <div class="space24"></div>
-                <ul>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
-                </ul>
-              </div>
-              <div class="testimonial-vertical">
-                <div class="verical-boxarea">
-                  <div class="images-area">
-                    <div class="img1">
-                      <img src="/img/all-images/testimonial/testimonial-img5.png" alt="" />
-                    </div>
-                    <div class="text">
-                      <a href="#">Jofra Archer</a>
-                      <p>Happy Client</p>
-                    </div>
-                  </div>
-                  <div class="quito">
-                    <img src="/img/icons/quoto-icon2.svg" alt="" />
-                  </div>
-                </div>
-                <div class="space24"></div>
-                <span>Unforgettable Experience Of Luxury & Comfort!</span>
-                <div class="space16"></div>
-                <p>"Celebrated my anniversary at Property Villa, and it was beyond magical. The attention to detail, the of serene.”</p>
-                <div class="space24"></div>
-                <ul>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-star"></i>
-                  </li>
+                  <li><i class="fa-solid fa-star"></i></li>
+                  <li><i class="fa-solid fa-star"></i></li>
+                  <li><i class="fa-solid fa-star"></i></li>
+                  <li><i class="fa-solid fa-star"></i></li>
+                  <li><i class="fa-solid fa-star"></i></li>
                 </ul>
               </div>
             </div>
@@ -685,9 +537,9 @@
       </div>
     </div>
   </div>
-  <!-- ===== TESTIMONIAL AREA ENDS ======= -->
+  <!-- ===== WHY US AREA ENDS ======= -->
 
-  <!-- ===== OTHERS AREA STARTS ======= -->
+  <!-- ===== CTA AREA STARTS ======= -->
   <div class="others3-section-area sp5">
     <div class="container">
       <div class="row align-items-center">
@@ -707,17 +559,20 @@
         <div class="col-lg-1"></div>
         <div class="col-lg-5">
           <div class="others-header heading3">
-            <h5 data-aos="fade-left" data-aos-duration="800">schedule a tour</h5>
+            <h5 data-aos="fade-left" data-aos-duration="800">Contact</h5>
             <div class="space20"></div>
-            <h2 class="text-anime-style-3">Home Waiting For You Here Schedule A Tour</h2>
+            <h2 class="text-anime-style-3">Parlons de votre bien des aujourd'hui</h2>
             <div class="space16"></div>
-            <p data-aos="fade-left" data-aos-duration="1000">Indulge in the epitome of luxury living at Luxury, where every amenity is meticulously designed to elevate your lifestyle.</p>
+            <p data-aos="fade-left" data-aos-duration="1000">
+              Une question, un projet de gestion, de syndic ou de transaction ?
+              Contactez-nous et nous vous repondrons rapidement depuis notre bureau de Point E.
+            </p>
             <div class="space24"></div>
             <div class="btn-area1" data-aos="fade-left" data-aos-duration="1200">
-              <a href="{{ url('/pages/contact') }}" class="header-btn3">Schedule A Visit</a>
-              <a href="https://www.youtube.com/watch?v=Y8XpQpW5OVY" class="popup-youtube">
-                <span class="play-btn"><i class="fa-solid fa-play"></i></span>
-                <span class="text">Video</span>
+              <a href="{{ url('/pages/contact') }}" class="header-btn3">Nous contacter</a>
+              <a href="https://wa.me/221781644156" target="_blank" rel="noopener noreferrer">
+                <span class="play-btn"><i class="fa-brands fa-whatsapp"></i></span>
+                <span class="text">78 164 41 56</span>
               </a>
             </div>
           </div>
@@ -725,7 +580,7 @@
       </div>
     </div>
   </div>
-  <!-- ===== OTHERS AREA ENDS ======= -->
+  <!-- ===== CTA AREA ENDS ======= -->
 
   <!-- ===== BLOG AREA STARTS ======= -->
   <div class="blog3-section-area sp7">
@@ -733,9 +588,9 @@
       <div class="row">
         <div class="col-lg-5 m-auto">
           <div class="blog-header text-center heading3 space-margin60">
-            <h5 data-aos="fade-left" data-aos-duration="800">Our Blog</h5>
+            <h5 data-aos="fade-left" data-aos-duration="800">Nos engagements</h5>
             <div class="space20"></div>
-            <h2 class="text-anime-style-3">Our News & Articles</h2>
+            <h2 class="text-anime-style-3">Ce que vous pouvez attendre de nous</h2>
           </div>
         </div>
       </div>
@@ -747,17 +602,13 @@
             </div>
             <div class="content-area">
               <ul>
-                <li>
-                  <a href="#"><img src="/img/icons/user.svg" alt="" /> Joe Root</a> <span>|</span>
-                </li>
-                <li>
-                  <a href="#"><img src="/img/icons/calender.svg" alt="" /> 16 April, 2024</a>
-                </li>
+                <li><a href="#"><img src="/img/icons/user.svg" alt="" /> Sunugal Habitat</a> <span>|</span></li>
+                <li><a href="#"><img src="/img/icons/calender.svg" alt="" /> Point E</a></li>
               </ul>
               <div class="space20"></div>
-              <a href="{{ url('/blogs/single') }}">How Luxury Suite Offers the Perfect Blend the Comfort</a>
+              <a href="{{ url('/pages/contact') }}">Un mandat clair et une commission juste, sans surprise.</a>
               <div class="space24"></div>
-              <a href="{{ url('/blogs/single') }}" class="readmore">Read More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="{{ url('/pages/contact') }}" class="readmore">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
         </div>
@@ -769,17 +620,13 @@
             </div>
             <div class="content-area">
               <ul>
-                <li>
-                  <a href="#"><img src="/img/icons/user.svg" alt="" /> Joe Root</a> <span>|</span>
-                </li>
-                <li>
-                  <a href="#"><img src="/img/icons/calender.svg" alt="" /> 16 April, 2024</a>
-                </li>
+                <li><a href="#"><img src="/img/icons/user.svg" alt="" /> Suivi local</a> <span>|</span></li>
+                <li><a href="#"><img src="/img/icons/calender.svg" alt="" /> Reactivite</a></li>
               </ul>
               <div class="space20"></div>
-              <a href="{{ url('/blogs/single') }}">Guest Spotlight: Memorable Moments at Luxury Suite Villa</a>
+              <a href="{{ url('/pages/contact') }}">Un compte-rendu mensuel accompagne de photos et d'informations utiles.</a>
               <div class="space24"></div>
-              <a href="{{ url('/blogs/single') }}" class="readmore">Read More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="{{ url('/pages/contact') }}" class="readmore">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
         </div>
@@ -791,17 +638,13 @@
             </div>
             <div class="content-area">
               <ul>
-                <li>
-                  <a href="#"><img src="/img/icons/user.svg" alt="" /> Joe Root</a> <span>|</span>
-                </li>
-                <li>
-                  <a href="#"><img src="/img/icons/calender.svg" alt="" /> 16 April, 2024</a>
-                </li>
+                <li><a href="#"><img src="/img/icons/user.svg" alt="" /> Vente & achat</a> <span>|</span></li>
+                <li><a href="#"><img src="/img/icons/calender.svg" alt="" /> Securise</a></li>
               </ul>
               <div class="space20"></div>
-              <a href="{{ url('/blogs/single') }}">Behind the Scenes: The Art of Creating Luxury Suite Villa</a>
+              <a href="{{ url('/pages/contact') }}">Des visites qualifiees et un accompagnement juridique plus securisant.</a>
               <div class="space24"></div>
-              <a href="{{ url('/blogs/single') }}" class="readmore">Read More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="{{ url('/pages/contact') }}" class="readmore">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
         </div>

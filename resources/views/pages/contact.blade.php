@@ -11,12 +11,13 @@
     </div>
     <div class="container">
       <div class="row">
-        <div class="col-lg-5">
+        <div class="col-lg-6">
           <div class="inner-heading header-heading">
-            <h2>Contact Us</h2>
+            <h2>Contact Sunugal Habitat</h2>
             <div class="space24"></div>
             <p>
-              <a href="{{ url('/') }}">Home <i class="fa-solid fa-angle-right"></i></a> <a href="{{ url('/blogs/blog') }}"'">Contact Us</a>
+              <a href="{{ url('/') }}">Accueil <i class="fa-solid fa-angle-right"></i></a>
+              <a href="{{ url('/pages/contact') }}">Contact</a>
             </p>
           </div>
         </div>
@@ -25,12 +26,12 @@
           <div class="auhtor-box">
             <div class="others-box">
               <div class="img3">
-                <img src="/img/all-images/others/others-img1.png" alt="" />
+                <img src="/img/logo/sunugal-logo.jpeg" alt="Sunugal Habitat" />
               </div>
               <div class="text">
-                <h3>Luxury Suite Villa</h3>
+                <h3>Rassidou Sow</h3>
                 <div class="space10"></div>
-                <p>$1.800,000</p>
+                <p>Agent Immobilier Agree</p>
               </div>
             </div>
           </div>
@@ -49,61 +50,22 @@
             <div class="row align-items-center">
               <div class="col-lg-8">
                 <div class="contact-input-section">
-                  <h3>Send us a Message</h3>
+                  <h3>Enracines dans la confiance</h3>
                   <div class="space16"></div>
                   <p>
-                    Contact us today and let's start your journey to urban living excellence. <br /> Our team at Hosue is here answer your questions, schedule viewings.
+                    Sunugal Habitat est votre partenaire immobilier de proximite au Point E.
+                    Nous gerons votre bien comme si c'etait le notre, avec un mandat clair,
+                    un suivi regulier et une vraie presence locale.
                   </p>
-                  <div class="space12"></div>
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div class="space20"></div>
-                      <div class="input-area">
-                        <input type="text" placeholder="First Name" />
-                      </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                      <div class="space20"></div>
-                      <div class="input-area">
-                        <input type="email" placeholder="Email" />
-                      </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                      <div class="space20"></div>
-                      <div class="input-area">
-                        <input type="number" placeholder="Phone" />
-                      </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                      <div class="space20"></div>
-                      <div class="input-area">
-                        <select name="country" class="nice-select">
-                          <option value="1" data-display="Subject*">Subject*</option>
-                          <option value="">Option 01</option>
-                          <option value="">Option 02</option>
-                          <option value="">Option 03</option>
-                          <option value="">Option 04</option>
-                          <option value="">Option 05</option>
-                          <option value="">Option 06</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-lg-12">
-                      <div class="space20"></div>
-                      <div class="input-area">
-                        <textarea placeholder="Your Message*"></textarea>
-                      </div>
-                    </div>
-                    <div class="col-lg-12">
-                      <div class="space32"></div>
-                      <div class="input-area text-end">
-                        <button type="submit" class="header-btn4">Send Message</button>
-                      </div>
-                    </div>
+                  <div class="space32"></div>
+                  <div class="contact-quick-links">
+                    <a href="https://wa.me/221781644156" target="_blank" rel="noopener noreferrer" class="header-btn3">Ecrire sur WhatsApp</a>
+                    <a href="mailto:contact@sunugalhabitat.sn" class="header-btn4">Envoyer un email</a>
                   </div>
+                  <div class="space32"></div>
+                  <p class="brand-note">
+                    Gestion locative, syndic de copropriete, vente et achat a Dakar.
+                  </p>
                 </div>
               </div>
               <div class="col-lg-4">
@@ -112,8 +74,8 @@
                     <img src="/img/icons/contact-icon1.svg" alt="" />
                   </div>
                   <div class="content">
-                    <p>Call</p>
-                    <a href="tel:+1234567890">+123 456 7890</a>
+                    <p>WhatsApp</p>
+                    <a href="tel:+221781644156">78 164 41 56</a>
                   </div>
                 </div>
                 <div class="space20"></div>
@@ -123,7 +85,7 @@
                   </div>
                   <div class="content">
                     <p>Email</p>
-                    <a href="mailto:info@hosuevilla.com">info@hosuevilla.com</a>
+                    <a href="mailto:contact@sunugalhabitat.sn">contact@sunugalhabitat.sn</a>
                   </div>
                 </div>
                 <div class="space20"></div>
@@ -132,8 +94,8 @@
                     <img src="/img/icons/contact-icon3.svg" alt="" />
                   </div>
                   <div class="content">
-                    <p>Schedule Time</p>
-                    <a href="#">24/7 Anytime All Support</a>
+                    <p>Adresse</p>
+                    <a href="#">Dakar Point E en face UCAD</a>
                   </div>
                 </div>
               </div>
@@ -147,19 +109,22 @@
         <div class="col-lg-4">
           <div class="contact-author-box">
             <div class="img1">
-              <img src="/img/all-images/testimonial/testimonial-img2.png" alt="" />
+              <img src="/img/logo/sunugal-logo.jpeg" alt="Sunugal Habitat" />
             </div>
             <div class="space24"></div>
-            <p>My Name is Alexy Roy, Agent of Hosue Apartment and Villa. I will answer all your question.</p>
+            <p>
+              Rassidou Sow vous repond pour la gestion locative, le syndic de copropriete,
+              la vente et l'achat de biens a Dakar.
+            </p>
             <div class="space32"></div>
             <div class="btn-area1">
-              <a href="#"><img src="/img/icons/whatsapp.svg" alt="" /> Ask Question On WhatsApp</a>
+              <a href="https://wa.me/221781644156" target="_blank" rel="noopener noreferrer"><img src="/img/icons/whatsapp.svg" alt="" /> Ecrire sur WhatsApp</a>
             </div>
           </div>
         </div>
         <div class="col-lg-8">
           <div class="maps-area">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4506257.120552435!2d88.67021924228865!3d21.954385721237916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1704088968016!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <img src="/img/all-images/contact/contact-img1.png" alt="Sunugal Habitat Dakar Point E" />
           </div>
         </div>
       </div>

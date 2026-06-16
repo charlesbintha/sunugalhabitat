@@ -14,3 +14,34 @@
 @import 'theme';
 @import 'components';
 @import 'layout';
+
+.site-logo img,
+.mobile-logo img,
+.footer-logo img,
+.logos img {
+  width: auto;
+  height: 76px;
+  object-fit: contain;
+}
+
+.footer-logo img,
+.logos img {
+  border-radius: 18px;
+}
+
+.contact-quick-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.contact-quick-links .header-btn3,
+.contact-quick-links .header-btn4 {
+  margin-top: 0;
+}
+
+.brand-note {
+  color: var(--ztc-text-text-3);
+  font-size: 18px;
+  line-height: 28px;
+}
