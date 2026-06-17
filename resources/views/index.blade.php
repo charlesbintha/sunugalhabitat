@@ -1,5 +1,7 @@
 @extends('layouts.landing')
 
+@section('body_attribute', 'sunugal-home-body')
+
 @section('content')
   <!-- ===== HERO AREA STARTS ======= -->
   <div class="header-carousel-area3 owl-carousel">
@@ -288,7 +290,7 @@
   <!-- ===== SERVICE AREA ENDS ======= -->
 
   <!-- ===== PRODUCTS AREA STARTS ======= -->
-  <div class="apartment-inner2-section-area sp7 bg2" id="products">
+  <div class="apartment-inner2-section-area sp7 bg2 sunugal-products-section" id="products">
     <div class="container">
       <div class="row">
         <div class="col-lg-6 m-auto">
@@ -299,10 +301,10 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row gy-4">
         @foreach (collect(config('products.items'))->take(4) as $product)
           <div class="col-lg-3 col-md-6" data-aos="zoom-in-up" data-aos-duration="{{ 800 + ($loop->index * 100) }}">
-            <div class="apartment-boxarea">
+            <div class="apartment-boxarea product-card">
               <div class="img1">
                 <img src="{{ $product['card_image'] }}" alt="{{ $product['title'] }}" />
               </div>

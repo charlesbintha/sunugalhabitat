@@ -39,12 +39,12 @@
     </div>
   </div>
 
-  <div class="apartment-inner2-section-area sp7 bg2">
+  <div class="apartment-inner2-section-area sp7 bg2 sunugal-products-section">
     <div class="container">
-      <div class="row">
+      <div class="row gy-4">
         @foreach ($products as $product)
           <div class="col-lg-4 col-md-6" data-aos="zoom-in-up" data-aos-duration="{{ 800 + ($loop->index * 100) }}">
-            <div class="apartment-boxarea">
+            <div class="apartment-boxarea product-card">
               <div class="img1">
                 <img src="{{ $product['card_image'] }}" alt="{{ $product['title'] }}" />
               </div>
