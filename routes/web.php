@@ -1,27 +1,44 @@
 <?php
 
+use App\Http\Controllers\Admin\AuthController as AdminAuthController;
+use App\Http\Controllers\Admin\ProductController as AdminProductController;
+use App\Http\Controllers\Admin\AdminUserController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
-    return view('index');
+Route::get('/', HomeController::class)->name('home');
+Route::get('/produits', [ProductController::class, 'index'])->name('products.index');
+Route::get('/produits/{slug}', [ProductController::class, 'show'])->name('products.show');
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::middleware('guest')->group(function () {
+        Route::get('/login', [AdminAuthController::class, 'create'])->name('login');
+        Route::post('/login', [AdminAuthController::class, 'store'])->name('login.store');
+    });
+
+    Route::middleware(['auth', 'admin'])->group(function () {
+        Route::redirect('/', '/admin/produits')->name('dashboard');
+        Route::get('/produits', [AdminProductController::class, 'index'])->name('products.index');
+        Route::get('/produits/creer', [AdminProductController::class, 'create'])->name('products.create');
+        Route::post('/produits', [AdminProductController::class, 'store'])->name('products.store');
+        Route::get('/produits/{product}/modifier', [AdminProductController::class, 'edit'])->name('products.edit');
+        Route::put('/produits/{product}', [AdminProductController::class, 'update'])->name('products.update');
+        Route::patch('/produits/{product}/statut', [AdminProductController::class, 'toggle'])->name('products.toggle');
+        Route::delete('/produits/{product}', [AdminProductController::class, 'destroy'])->name('products.destroy');
+
+        Route::get('/admins', [AdminUserController::class, 'index'])->name('admins.index');
+        Route::get('/admins/creer', [AdminUserController::class, 'create'])->name('admins.create');
+        Route::post('/admins', [AdminUserController::class, 'store'])->name('admins.store');
+        Route::get('/admins/{adminUser}/modifier', [AdminUserController::class, 'edit'])->name('admins.edit');
+        Route::put('/admins/{adminUser}', [AdminUserController::class, 'update'])->name('admins.update');
+        Route::patch('/admins/{adminUser}/statut', [AdminUserController::class, 'toggle'])->name('admins.toggle');
+        Route::delete('/admins/{adminUser}', [AdminUserController::class, 'destroy'])->name('admins.destroy');
+    });
+
+    Route::post('/logout', [AdminAuthController::class, 'destroy'])->middleware('auth')->name('logout');
 });
-
-Route::get('/produits', function () {
-    $products = array_values(config('products.items', []));
-
-    return view('products.index', compact('products'));
-})->name('products.index');
-
-Route::get('/produits/{slug}', function (string $slug) {
-    $products = config('products.items', []);
-    abort_unless(isset($products[$slug]), 404);
-
-    return view('products.show', [
-        'product' => $products[$slug],
-        'products' => array_values($products),
-    ]);
-})->name('products.show');
 
 // apartment
 Route::get('/apartment/left', function () {

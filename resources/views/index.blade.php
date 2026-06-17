@@ -302,7 +302,7 @@
         </div>
       </div>
       <div class="row gy-4">
-        @foreach (collect(config('products.items'))->take(4) as $product)
+        @foreach ($products as $product)
           <div class="col-lg-3 col-md-6" data-aos="zoom-in-up" data-aos-duration="{{ 800 + ($loop->index * 100) }}">
             <div class="apartment-boxarea product-card">
               <div class="img1">
