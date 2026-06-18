@@ -107,6 +107,185 @@
   line-height: 28px;
 }
 
+body.sunugal-campaign-modal-open {
+  overflow: hidden;
+}
+
+.sunugal-campaign-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .28s ease, visibility .28s ease;
+}
+
+.sunugal-campaign-modal.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.sunugal-campaign-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 24, 48, .72);
+  backdrop-filter: blur(6px);
+}
+
+.sunugal-campaign-modal__dialog {
+  position: relative;
+  z-index: 1;
+  width: min(1080px, calc(100% - 32px));
+  margin: min(6vh, 42px) auto;
+  background:
+    radial-gradient(circle at top left, rgba(220, 186, 83, .22), transparent 38%),
+    linear-gradient(135deg, #0d2748 0%, #163860 54%, #1e4a75 100%);
+  color: #fff;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 30px 90px rgba(5, 16, 32, .42);
+}
+
+.sunugal-campaign-modal__close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 46px;
+  height: 46px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .14);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.sunugal-campaign-modal__close:hover {
+  background: rgba(255, 255, 255, .24);
+  transform: rotate(90deg);
+}
+
+.sunugal-campaign-modal__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(340px, .95fr);
+  align-items: stretch;
+}
+
+.sunugal-campaign-modal__copy {
+  padding: 46px 42px 42px;
+}
+
+.sunugal-campaign-modal__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(220, 186, 83, .18);
+  color: #f4d873;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.sunugal-campaign-modal__brand {
+  margin: 22px 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.sunugal-campaign-modal__brand img {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .96);
+  padding: 10px;
+}
+
+.sunugal-campaign-modal__copy h2 {
+  color: #fff;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.08;
+  margin: 0;
+}
+
+.sunugal-campaign-modal__copy p {
+  margin: 20px 0 0;
+  color: rgba(255, 255, 255, .84);
+  font-size: 18px;
+  line-height: 30px;
+  max-width: 540px;
+}
+
+.sunugal-campaign-modal__countdown {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.sunugal-campaign-modal__countdown-item {
+  padding: 18px 14px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .1);
+  text-align: center;
+}
+
+.sunugal-campaign-modal__countdown-item strong {
+  display: block;
+  color: #f4d873;
+  font-size: clamp(28px, 3vw, 36px);
+  line-height: 1;
+  font-weight: 800;
+}
+
+.sunugal-campaign-modal__countdown-item span {
+  display: block;
+  margin-top: 10px;
+  color: rgba(255, 255, 255, .72);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.sunugal-campaign-modal__actions {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.sunugal-campaign-modal__actions .header-btn3,
+.sunugal-campaign-modal__actions .header-btn4 {
+  margin-top: 0;
+}
+
+.sunugal-campaign-modal__media {
+  min-height: 100%;
+  background: rgba(255, 255, 255, .06);
+}
+
+.sunugal-campaign-modal__media img {
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  object-fit: cover;
+  display: block;
+}
+
 .sunugal-products-section .row {
   align-items: stretch;
 }
@@ -212,6 +391,28 @@ body.sunugal-home-body .blog3-section-area .blog-boxarea .content-area {
 }
 
 @media (max-width: 991.98px) {
+  .sunugal-campaign-modal__dialog {
+    width: min(720px, calc(100% - 24px));
+    margin: 24px auto;
+  }
+
+  .sunugal-campaign-modal__content {
+    grid-template-columns: 1fr;
+  }
+
+  .sunugal-campaign-modal__media {
+    order: -1;
+  }
+
+  .sunugal-campaign-modal__media img {
+    min-height: 280px;
+    max-height: 340px;
+  }
+
+  .sunugal-campaign-modal__copy {
+    padding: 30px 26px 28px;
+  }
+
   .sunugal-products-section .product-card .img1 {
     height: 280px;
   }
@@ -226,6 +427,67 @@ body.sunugal-home-body .blog3-section-area .blog-boxarea .content-area {
 }
 
 @media (max-width: 575.98px) {
+  .sunugal-campaign-modal__dialog {
+    width: calc(100% - 16px);
+    border-radius: 24px;
+    margin: 12px auto;
+  }
+
+  .sunugal-campaign-modal__close {
+    top: 14px;
+    right: 14px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .sunugal-campaign-modal__copy {
+    padding: 24px 18px 22px;
+  }
+
+  .sunugal-campaign-modal__brand {
+    margin: 16px 0 14px;
+  }
+
+  .sunugal-campaign-modal__brand img {
+    width: 62px;
+    height: 62px;
+  }
+
+  .sunugal-campaign-modal__copy h2 {
+    font-size: 30px;
+  }
+
+  .sunugal-campaign-modal__copy p {
+    font-size: 16px;
+    line-height: 27px;
+  }
+
+  .sunugal-campaign-modal__countdown {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .sunugal-campaign-modal__countdown-item {
+    padding: 14px 10px;
+    border-radius: 18px;
+  }
+
+  .sunugal-campaign-modal__actions {
+    gap: 10px;
+  }
+
+  .sunugal-campaign-modal__actions .header-btn3,
+  .sunugal-campaign-modal__actions .header-btn4 {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .sunugal-campaign-modal__media img {
+    min-height: 220px;
+    max-height: 220px;
+  }
+
   body.sunugal-home-body [data-aos] {
     transform: none !important;
     opacity: 1 !important;

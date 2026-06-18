@@ -17,6 +17,7 @@
 <body class="homepage3-body @yield('body_attribute')">
 
     @include('layouts.partials.loader')
+    @include('layouts.partials.world-cup-popup')
 
     @include('layouts.partials.header.navbar')
 

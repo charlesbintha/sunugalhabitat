@@ -42,6 +42,76 @@ window.addEventListener('load', function() {
 
 $(document).ready(function(){
 
+const campaignModal = document.getElementById('sunugalCampaignModal');
+
+if (campaignModal) {
+  const deadline = campaignModal.dataset.campaignDeadline;
+  const deadlineTime = Date.parse(deadline);
+  const countdownNodes = {
+    days: campaignModal.querySelector('[data-countdown-days]'),
+    hours: campaignModal.querySelector('[data-countdown-hours]'),
+    minutes: campaignModal.querySelector('[data-countdown-minutes]'),
+    seconds: campaignModal.querySelector('[data-countdown-seconds]'),
+  };
+  let countdownTimer = null;
+
+  const closeCampaignModal = () => {
+    campaignModal.classList.remove('is-visible');
+    campaignModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('sunugal-campaign-modal-open');
+
+    if (countdownTimer) {
+      window.clearInterval(countdownTimer);
+      countdownTimer = null;
+    }
+  };
+
+  const padCountdownValue = (value) => String(value).padStart(2, '0');
+
+  const renderCountdown = () => {
+    const distance = deadlineTime - Date.now();
+
+    if (distance <= 0) {
+      closeCampaignModal();
+      campaignModal.remove();
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((distance / (1000 * 60)) % 60);
+    const seconds = Math.floor((distance / 1000) % 60);
+
+    if (countdownNodes.days) countdownNodes.days.textContent = padCountdownValue(days);
+    if (countdownNodes.hours) countdownNodes.hours.textContent = padCountdownValue(hours);
+    if (countdownNodes.minutes) countdownNodes.minutes.textContent = padCountdownValue(minutes);
+    if (countdownNodes.seconds) countdownNodes.seconds.textContent = padCountdownValue(seconds);
+  };
+
+  if (!Number.isNaN(deadlineTime) && deadlineTime > Date.now()) {
+    window.setTimeout(() => {
+      campaignModal.classList.add('is-visible');
+      campaignModal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('sunugal-campaign-modal-open');
+    }, 600);
+
+    renderCountdown();
+    countdownTimer = window.setInterval(renderCountdown, 1000);
+
+    campaignModal.querySelectorAll('[data-campaign-close]').forEach((button) => {
+      button.addEventListener('click', closeCampaignModal);
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && campaignModal.classList.contains('is-visible')) {
+        closeCampaignModal();
+      }
+    });
+  } else {
+    campaignModal.remove();
+  }
+}
+
 
 //========== HEADER ACTIVE STRATS ============= //
 if ($("#header").length > 0) {
