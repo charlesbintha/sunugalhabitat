@@ -76,8 +76,8 @@
                   </p>
                   <div class="space32"></div>
                   <div class="contact-quick-links">
-                    <a href="https://wa.me/221781644156" target="_blank" rel="noopener noreferrer" class="header-btn3">Ecrire sur WhatsApp</a>
-                    <a href="mailto:contact@sunugalhabitat.sn" class="header-btn4">Envoyer un email</a>
+                    <a href="https://wa.me/221761991908" target="_blank" rel="noopener noreferrer" class="header-btn3">Ecrire sur WhatsApp</a>
+                    <a href="mailto:info@sunugalhabitat.sn" class="header-btn4">Envoyer un email</a>
                   </div>
                   <div class="space32"></div>
                   <p class="brand-note">
@@ -92,7 +92,7 @@
                   </div>
                   <div class="content">
                     <p>WhatsApp</p>
-                    <a href="tel:+221781644156">78 164 41 56</a>
+                    <a href="tel:+221761991908">76 199 19 08</a>
                   </div>
                 </div>
                 <div class="space20"></div>
@@ -102,7 +102,7 @@
                   </div>
                   <div class="content">
                     <p>Email</p>
-                    <a href="mailto:contact@sunugalhabitat.sn">contact@sunugalhabitat.sn</a>
+                    <a href="mailto:info@sunugalhabitat.sn">info@sunugalhabitat.sn</a>
                   </div>
                 </div>
                 <div class="space20"></div>
@@ -135,7 +135,7 @@
             </p>
             <div class="space32"></div>
             <div class="btn-area1">
-              <a href="https://wa.me/221781644156" target="_blank" rel="noopener noreferrer"><img src="/img/icons/whatsapp.svg" alt="" /> Ecrire sur WhatsApp</a>
+              <a href="https://wa.me/221761991908" target="_blank" rel="noopener noreferrer"><img src="/img/icons/whatsapp.svg" alt="" /> Ecrire sur WhatsApp</a>
             </div>
           </div>
         </div>

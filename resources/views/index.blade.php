@@ -14,8 +14,8 @@
         'url' => route('home'),
         'image' => asset('img/logo/sunugal-logo.jpeg'),
         'logo' => asset('img/logo/sunugal-logo.jpeg'),
-        'telephone' => '+221781644156',
-        'email' => 'contact@sunugalhabitat.sn',
+        'telephone' => '+221761991908',
+        'email' => 'info@sunugalhabitat.sn',
         'address' => [
             '@type' => 'PostalAddress',
             'streetAddress' => 'Point E en face UCAD',
@@ -25,7 +25,7 @@
         'areaServed' => 'Dakar',
         'description' => 'Agence immobiliere a Dakar Point E specialisee en gestion locative, syndic de copropriete, vente et achat.',
         'sameAs' => [
-            'https://wa.me/221781644156',
+            'https://wa.me/221761991908',
         ],
     ];
 
@@ -99,7 +99,7 @@
                 <div class="space32"></div>
                 <div class="btn-area1">
                   <a href="{{ url('/pages/contact') }}" class="header-btn3">Nous contacter</a>
-                  <a href="https://wa.me/221781644156" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/221761991908" target="_blank" rel="noopener noreferrer">
                     <span class="play-btn"><i class="fa-brands fa-whatsapp"></i></span>
                     <span class="text">WhatsApp</span>
                   </a>
@@ -205,7 +205,7 @@
                 <div class="space32"></div>
                 <div class="btn-area1">
                   <a href="{{ url('/#why-us') }}" class="header-btn3">Pourquoi nous choisir ?</a>
-                  <a href="mailto:contact@sunugalhabitat.sn">
+                  <a href="mailto:info@sunugalhabitat.sn">
                     <span class="play-btn"><i class="fa-solid fa-envelope"></i></span>
                     <span class="text">Email</span>
                   </a>
@@ -452,10 +452,10 @@
             <div class="col-lg-6 col-md-6">
               <div class="about-video-area">
                 <div class="img1 image-anime reveal">
-                  <a href="https://wa.me/221781644156" target="_blank" rel="noopener noreferrer"><img src="/img/all-images/about/about-img5.png" alt="" /></a>
+                  <a href="https://wa.me/221761991908" target="_blank" rel="noopener noreferrer"><img src="/img/all-images/about/about-img5.png" alt="" /></a>
                 </div>
                 <div class="play-btn">
-                  <a href="https://wa.me/221781644156" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
+                  <a href="https://wa.me/221761991908" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
               </div>
             </div>
@@ -552,7 +552,7 @@
               <img src="/img/all-images/testimonial/testimonial-img3.png" alt="" />
             </div>
             <div class="icons">
-              <a href="https://wa.me/221781644156" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
+              <a href="https://wa.me/221761991908" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
           </div>
         </div>
@@ -693,9 +693,9 @@
             <div class="space24"></div>
             <div class="btn-area1" data-aos="fade-left" data-aos-duration="1200">
               <a href="{{ url('/pages/contact') }}" class="header-btn3">Nous contacter</a>
-              <a href="https://wa.me/221781644156" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/221761991908" target="_blank" rel="noopener noreferrer">
                 <span class="play-btn"><i class="fa-brands fa-whatsapp"></i></span>
-                <span class="text">78 164 41 56</span>
+                <span class="text">76 199 19 08</span>
               </a>
             </div>
           </div>

@@ -19,9 +19,9 @@
                         </div>
                         <div class="btn-area-author">
                             <ul>
-                                <li><a href="https://wa.me/221781644156" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a></li>
-                                <li><a href="tel:+221781644156"><i class="fa-solid fa-phone"></i></a></li>
-                                <li><a href="mailto:contact@sunugalhabitat.sn"><i class="fa-solid fa-envelope"></i></a></li>
+                                <li><a href="https://wa.me/221761991908" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                <li><a href="tel:+221761991908"><i class="fa-solid fa-phone"></i></a></li>
+                                <li><a href="mailto:info@sunugalhabitat.sn"><i class="fa-solid fa-envelope"></i></a></li>
                                 <li><a href="{{ url('/pages/contact') }}" class="m-0"><i class="fa-solid fa-location-dot"></i></a></li>
                             </ul>
                         </div>
@@ -68,7 +68,7 @@
         </ul>
 
         <div class="allmobilesection">
-            <a href="https://wa.me/221781644156" target="_blank" rel="noopener noreferrer" class="header-btn3">WhatsApp <span><i class="fa-solid fa-arrow-right"></i></span></a>
+            <a href="https://wa.me/221761991908" target="_blank" rel="noopener noreferrer" class="header-btn3">WhatsApp <span><i class="fa-solid fa-arrow-right"></i></span></a>
             <div class="single-footer">
                 <h3>Contact direct</h3>
                 <div class="footer1-contact-info">
@@ -77,7 +77,7 @@
                             <i class="fa-solid fa-phone-volume"></i>
                         </div>
                         <div class="contact-info-text">
-                            <a href="tel:+221781644156">78 164 41 56</a>
+                            <a href="tel:+221761991908">76 199 19 08</a>
                         </div>
                     </div>
 
@@ -86,7 +86,7 @@
                             <i class="fa-solid fa-envelope"></i>
                         </div>
                         <div class="contact-info-text">
-                            <a href="mailto:contact@sunugalhabitat.sn">contact@sunugalhabitat.sn</a>
+                            <a href="mailto:info@sunugalhabitat.sn">info@sunugalhabitat.sn</a>
                         </div>
                     </div>
 
@@ -108,9 +108,9 @@
 
                         <div class="social-links-mobile-menu">
                             <ul>
-                                <li><a href="https://wa.me/221781644156" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a></li>
-                                <li><a href="mailto:contact@sunugalhabitat.sn"><i class="fa-solid fa-envelope"></i></a></li>
-                                <li><a href="tel:+221781644156"><i class="fa-solid fa-phone"></i></a></li>
+                                <li><a href="https://wa.me/221761991908" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                <li><a href="mailto:info@sunugalhabitat.sn"><i class="fa-solid fa-envelope"></i></a></li>
+                                <li><a href="tel:+221761991908"><i class="fa-solid fa-phone"></i></a></li>
                                 <li><a href="{{ url('/pages/contact') }}"><i class="fa-solid fa-location-dot"></i></a></li>
                             </ul>
                         </div>

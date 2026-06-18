@@ -15,17 +15,17 @@
                                 </p>
                                 <div class="space32"></div>
                                 <div class="contact-quick-links">
-                                    <a href="https://wa.me/221781644156" target="_blank" rel="noopener noreferrer" class="header-btn3">WhatsApp</a>
-                                    <a href="mailto:contact@sunugalhabitat.sn" class="header-btn4">Email</a>
+                                    <a href="https://wa.me/221761991908" target="_blank" rel="noopener noreferrer" class="header-btn3">WhatsApp</a>
+                                    <a href="mailto:info@sunugalhabitat.sn" class="header-btn4">Email</a>
                                 </div>
                                 <div class="space32"></div>
                                 <div class="footer-menu2">
                                     <ul>
                                         <li><a href="#"><span><i class="fa-solid fa-location-dot"></i></span> <span>Dakar Point E en face UCAD</span></a></li>
                                         <li class="space24"></li>
-                                        <li><a href="tel:+221781644156"><span><i class="fa-solid fa-phone"></i></span> <span>78 164 41 56</span></a></li>
+                                        <li><a href="tel:+221761991908"><span><i class="fa-solid fa-phone"></i></span> <span>76 199 19 08</span></a></li>
                                         <li class="space24"></li>
-                                        <li><a href="mailto:contact@sunugalhabitat.sn"><span><i class="fa-solid fa-envelope"></i></span> <span>contact@sunugalhabitat.sn</span></a></li>
+                                        <li><a href="mailto:info@sunugalhabitat.sn"><span><i class="fa-solid fa-envelope"></i></span> <span>info@sunugalhabitat.sn</span></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -94,7 +94,7 @@
                                     <li class="space24"></li>
                                     <li><a href="{{ url('/pages/contact') }}">Contact</a></li>
                                     <li class="space24"></li>
-                                    <li><a href="https://wa.me/221781644156" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                                    <li><a href="https://wa.me/221761991908" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
                                 </ul>
                             </div>
                             <div class="footer-menu2">
@@ -106,9 +106,9 @@
                             </div>
                             <div class="footer-social">
                                 <ul>
-                                    <li><a href="https://wa.me/221781644156" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a></li>
-                                    <li><a href="mailto:contact@sunugalhabitat.sn"><i class="fa-solid fa-envelope"></i></a></li>
-                                    <li><a href="tel:+221781644156"><i class="fa-solid fa-phone"></i></a></li>
+                                    <li><a href="https://wa.me/221761991908" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                    <li><a href="mailto:info@sunugalhabitat.sn"><i class="fa-solid fa-envelope"></i></a></li>
+                                    <li><a href="tel:+221761991908"><i class="fa-solid fa-phone"></i></a></li>
                                     <li><a href="{{ url('/pages/contact') }}"><i class="fa-solid fa-location-dot"></i></a></li>
                                 </ul>
                             </div>

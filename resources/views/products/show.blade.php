@@ -170,8 +170,8 @@
               <h3>Parler de ce produit</h3>
               <div class="space16"></div>
               <div class="contact-quick-links">
-                <a href="https://wa.me/221781644156" target="_blank" rel="noopener noreferrer" class="header-btn3">WhatsApp</a>
-                <a href="mailto:contact@sunugalhabitat.sn?subject={{ rawurlencode('Information produit - '.$product['title']) }}" class="header-btn4">Email</a>
+                <a href="https://wa.me/221761991908" target="_blank" rel="noopener noreferrer" class="header-btn3">WhatsApp</a>
+                <a href="mailto:info@sunugalhabitat.sn?subject={{ rawurlencode('Information produit - '.$product['title']) }}" class="header-btn4">Email</a>
               </div>
             </div>
           </div>
