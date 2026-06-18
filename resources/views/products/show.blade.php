@@ -1,5 +1,74 @@
 @extends('layouts.landing')
 
+@section('meta_title', $product['title'].' | Produit immobilier a Dakar | Sunugal Habitat')
+@section('meta_description', $product['summary'])
+@section('meta_canonical', route('products.show', $product['slug']))
+@section('meta_image', asset(ltrim($product['hero_image'], '/')))
+@section('schema')
+  @php
+    $productOffer = [
+        '@type' => 'Offer',
+        'availability' => 'https://schema.org/InStock',
+        'priceCurrency' => 'XOF',
+        'url' => route('products.show', $product['slug']),
+        'seller' => [
+            '@type' => 'RealEstateAgent',
+            'name' => 'Sunugal Habitat',
+        ],
+    ];
+
+    if ($product['price'] !== 'Sur demande') {
+        $productOffer['price'] = preg_replace('/[^0-9]/', '', $product['price']);
+    }
+
+    $productSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'Product',
+        'name' => $product['title'],
+        'description' => $product['summary'],
+        'image' => [
+            asset(ltrim($product['hero_image'], '/')),
+            asset(ltrim($product['gallery_image_1'], '/')),
+            asset(ltrim($product['gallery_image_2'], '/')),
+        ],
+        'brand' => [
+            '@type' => 'Brand',
+            'name' => 'Sunugal Habitat',
+        ],
+        'category' => $product['type'],
+        'url' => route('products.show', $product['slug']),
+        'offers' => $productOffer,
+    ];
+
+    $breadcrumbSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'BreadcrumbList',
+        'itemListElement' => [
+            [
+                '@type' => 'ListItem',
+                'position' => 1,
+                'name' => 'Accueil',
+                'item' => route('home'),
+            ],
+            [
+                '@type' => 'ListItem',
+                'position' => 2,
+                'name' => 'Produits',
+                'item' => route('products.index'),
+            ],
+            [
+                '@type' => 'ListItem',
+                'position' => 3,
+                'name' => $product['title'],
+                'item' => route('products.show', $product['slug']),
+            ],
+        ],
+    ];
+  @endphp
+  <script type="application/ld+json">@json($productSchema, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE)</script>
+  <script type="application/ld+json">@json($breadcrumbSchema, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE)</script>
+@endsection
+
 @section('content')
   <div class="inner-main-hero-area">
     <div class="img1">

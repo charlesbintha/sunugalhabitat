@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>@yield('title', 'Administration Sunugal Habitat')</title>
+  <meta name="robots" content="noindex,nofollow,noarchive">
   <style>
     :root {
       --bg: #f4f6f8;

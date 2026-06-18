@@ -42,6 +42,30 @@ class ProductCatalog
             ->values();
     }
 
+    public function sitemapEntries(): Collection
+    {
+        if ($this->shouldUseDatabase()) {
+            return Product::query()
+                ->active()
+                ->ordered()
+                ->get(['slug', 'updated_at'])
+                ->map(fn (Product $product) => [
+                    'slug' => $product->slug,
+                    'lastmod' => optional($product->updated_at)->toDateString() ?? now()->toDateString(),
+                ])
+                ->values();
+        }
+
+        $lastmod = now()->toDateString();
+
+        return collect(config('products.items', []))
+            ->map(fn (array $product) => [
+                'slug' => $product['slug'],
+                'lastmod' => $lastmod,
+            ])
+            ->values();
+    }
+
     protected function shouldUseDatabase(): bool
     {
         return Schema::hasTable('products') && Product::query()->exists();

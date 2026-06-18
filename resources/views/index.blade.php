@@ -1,6 +1,74 @@
 @extends('layouts.landing')
 
 @section('body_attribute', 'sunugal-home-body')
+@section('meta_title', 'Sunugal Habitat | Agence immobiliere a Dakar Point E')
+@section('meta_description', 'Sunugal Habitat, agence immobiliere a Dakar Point E. Gestion locative, syndic de copropriete, vente et achat avec une equipe de proximite, reactive et transparente.')
+@section('meta_canonical', route('home'))
+@section('meta_image', asset('img/all-images/hero/hero-img6.png'))
+@section('schema')
+  @php
+    $organizationSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'RealEstateAgent',
+        'name' => 'Sunugal Habitat',
+        'url' => route('home'),
+        'image' => asset('img/logo/sunugal-logo.jpeg'),
+        'logo' => asset('img/logo/sunugal-logo.jpeg'),
+        'telephone' => '+221781644156',
+        'email' => 'contact@sunugalhabitat.sn',
+        'address' => [
+            '@type' => 'PostalAddress',
+            'streetAddress' => 'Point E en face UCAD',
+            'addressLocality' => 'Dakar',
+            'addressCountry' => 'SN',
+        ],
+        'areaServed' => 'Dakar',
+        'description' => 'Agence immobiliere a Dakar Point E specialisee en gestion locative, syndic de copropriete, vente et achat.',
+        'sameAs' => [
+            'https://wa.me/221781644156',
+        ],
+    ];
+
+    $websiteSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'WebSite',
+        'name' => 'Sunugal Habitat',
+        'url' => route('home'),
+        'inLanguage' => 'fr-SN',
+    ];
+
+    $serviceSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'ItemList',
+        'name' => 'Services immobiliers Sunugal Habitat',
+        'itemListElement' => [
+            [
+                '@type' => 'ListItem',
+                'position' => 1,
+                'name' => 'Gestion locative',
+            ],
+            [
+                '@type' => 'ListItem',
+                'position' => 2,
+                'name' => 'Syndic de copropriete',
+            ],
+            [
+                '@type' => 'ListItem',
+                'position' => 3,
+                'name' => 'Vente et achat',
+            ],
+            [
+                '@type' => 'ListItem',
+                'position' => 4,
+                'name' => 'Suivi local',
+            ],
+        ],
+    ];
+  @endphp
+  <script type="application/ld+json">@json($organizationSchema, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE)</script>
+  <script type="application/ld+json">@json($websiteSchema, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE)</script>
+  <script type="application/ld+json">@json($serviceSchema, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE)</script>
+@endsection
 
 @section('content')
   <!-- ===== HERO AREA STARTS ======= -->

@@ -1,5 +1,22 @@
 @extends('layouts.landing')
 
+@section('meta_title', 'Contact agence immobiliere Dakar Point E | Sunugal Habitat')
+@section('meta_description', 'Contactez Sunugal Habitat a Dakar Point E pour la gestion locative, le syndic de copropriete, la vente ou l achat de biens immobiliers.')
+@section('meta_canonical', url('/pages/contact'))
+@section('meta_image', asset('img/all-images/hero/hero-img1.png'))
+@section('schema')
+  @php
+    $contactSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'ContactPage',
+        'name' => 'Contact Sunugal Habitat',
+        'url' => url('/pages/contact'),
+        'description' => 'Page de contact de Sunugal Habitat, agence immobiliere a Dakar Point E.',
+    ];
+  @endphp
+  <script type="application/ld+json">@json($contactSchema, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE)</script>
+@endsection
+
 @section('content')
   <!-- ===== HERO AREA STARTS ======= -->
   <div class="inner-main-hero-area">

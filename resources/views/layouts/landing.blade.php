@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" @yield('html_attribute')>
+<html lang="fr-SN" @yield('html_attribute')>
 
 <head>
 
@@ -9,6 +9,8 @@
     @vite(['resources/scss/main.scss'])
 
     @yield('css')
+
+    @yield('schema')
 
 </head>
 

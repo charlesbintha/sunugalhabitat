@@ -1,5 +1,22 @@
 @extends('layouts.landing')
 
+@section('meta_title', 'Produits immobiliers a Dakar | Sunugal Habitat')
+@section('meta_description', 'Decouvrez les produits immobiliers presentes par Sunugal Habitat a Dakar: appartements, villas et immeubles avec accompagnement local et transparent.')
+@section('meta_canonical', route('products.index'))
+@section('meta_image', asset('img/all-images/hero/hero-img1.png'))
+@section('schema')
+  @php
+    $collectionSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'CollectionPage',
+        'name' => 'Produits immobiliers Sunugal Habitat',
+        'url' => route('products.index'),
+        'description' => 'Selection de biens et opportunites a Dakar proposee par Sunugal Habitat.',
+    ];
+  @endphp
+  <script type="application/ld+json">@json($collectionSchema, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE)</script>
+@endsection
+
 @section('content')
   <div class="inner-main-hero-area">
     <div class="img1">

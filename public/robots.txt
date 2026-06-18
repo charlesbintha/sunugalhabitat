@@ -1,2 +1,3 @@
 User-agent: *
 Disallow:
+Sitemap: https://sunugalhabitat.sn/sitemap.xml
