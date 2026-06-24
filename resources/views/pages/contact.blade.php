@@ -43,7 +43,7 @@
           <div class="auhtor-box">
             <div class="others-box">
               <div class="img3">
-                <img src="/img/logo/sunugal-logo-cropped.jpeg" alt="Sunugal Habitat" />
+                <img src="/img/logo/sunugal-logo.png" alt="Sunugal Habitat" />
               </div>
               <div class="text">
                 <h3>Rassidou Sow</h3>
@@ -126,7 +126,7 @@
         <div class="col-lg-4">
           <div class="contact-author-box">
             <div class="img1">
-              <img src="/img/logo/sunugal-logo-cropped.jpeg" alt="Sunugal Habitat" />
+              <img src="/img/logo/sunugal-logo.png" alt="Sunugal Habitat" />
             </div>
             <div class="space24"></div>
             <p>

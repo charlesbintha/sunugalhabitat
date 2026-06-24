@@ -49,4 +49,4 @@
 <meta name="twitter:image:alt" content="{{ $metaImageAlt }}">
 
 <!--=====FAB ICON=======-->
-<link rel="shortcut icon" href="/img/logo/sunugal-logo.jpeg" type="image/jpeg">
+<link rel="shortcut icon" href="/img/logo/sunugal-logo.png" type="image/png">

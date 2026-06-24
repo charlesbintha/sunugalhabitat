@@ -12,8 +12,8 @@
         '@type' => 'RealEstateAgent',
         'name' => 'Sunugal Habitat',
         'url' => route('home'),
-        'image' => asset('img/logo/sunugal-logo.jpeg'),
-        'logo' => asset('img/logo/sunugal-logo.jpeg'),
+        'image' => asset('img/logo/sunugal-logo.png'),
+        'logo' => asset('img/logo/sunugal-logo.png'),
         'telephone' => '+221761991908',
         'email' => 'info@sunugalhabitat.sn',
         'address' => [
@@ -112,7 +112,7 @@
             <div class="auhtor-box">
               <div class="others-box">
                 <div class="img3">
-                  <img src="/img/logo/sunugal-logo-cropped.jpeg" alt="Sunugal Habitat" />
+                  <img src="/img/logo/sunugal-logo.png" alt="Sunugal Habitat" />
                 </div>
                 <div class="text">
                   <h3>Rassidou Sow</h3>

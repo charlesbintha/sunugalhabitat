@@ -24,8 +24,6 @@ class ProductController extends Controller
         return view('admin.products.create', [
             'product' => new Product([
                 'price' => 'Sur demande',
-                'amenities_title' => 'Atouts du produit',
-                'amenities_text' => 'Resumez ici les points forts du bien.',
                 'is_active' => true,
             ]),
         ]);
@@ -79,35 +77,40 @@ class ProductController extends Controller
     {
         $data = $request->validate([
             'title' => ['required', 'string', 'max:255'],
-            'slug' => ['nullable', 'string', 'max:255'],
             'type' => ['required', 'string', 'max:255'],
             'location' => ['required', 'string', 'max:255'],
             'price' => ['nullable', 'string', 'max:255'],
-            'surface' => ['required', 'string', 'max:255'],
+            'surface' => ['nullable', 'string', 'max:255'],
             'beds' => ['required', 'string', 'max:50'],
-            'baths' => ['required', 'string', 'max:50'],
-            'hero_image' => ['nullable', 'string', 'max:255'],
-            'card_image' => ['nullable', 'string', 'max:255'],
-            'gallery_image_1' => ['nullable', 'string', 'max:255'],
-            'gallery_image_2' => ['nullable', 'string', 'max:255'],
+            'baths' => ['nullable', 'string', 'max:50'],
             'hero_image_file' => ['nullable', 'image', 'max:5120'],
             'card_image_file' => ['nullable', 'image', 'max:5120'],
             'gallery_image_1_file' => ['nullable', 'image', 'max:5120'],
             'gallery_image_2_file' => ['nullable', 'image', 'max:5120'],
             'summary' => ['required', 'string'],
-            'description_1' => ['required', 'string'],
-            'description_2' => ['required', 'string'],
-            'amenities_title' => ['required', 'string', 'max:255'],
-            'amenities_text' => ['required', 'string'],
-            'amenities_input' => ['required', 'string'],
-            'sort_order' => ['nullable', 'integer', 'min:0'],
+            'description_1' => ['nullable', 'string'],
+            'description_2' => ['nullable', 'string'],
         ]);
 
-        $data['slug'] = $this->buildUniqueSlug($data['slug'] ?: $data['title'], $product);
+        if (! $request->hasFile('hero_image_file') && blank($product->hero_image)) {
+            throw \Illuminate\Validation\ValidationException::withMessages([
+                'hero_image_file' => 'L image hero est obligatoire.',
+            ]);
+        }
+
+        $data['slug'] = $this->buildUniqueSlug($data['title'], $product);
         $data['price'] = $data['price'] ?: 'Sur demande';
-        $data['sort_order'] = $data['sort_order'] ?? 0;
+        $data['surface'] = $data['surface'] ?: '';
+        $data['baths'] = $data['baths'] ?: '';
+        $data['description_1'] = $data['description_1'] ?: '';
+        $data['description_2'] = $data['description_2'] ?: '';
+        $data['sort_order'] = $product->exists
+            ? $product->sort_order
+            : $this->nextSortOrder();
         $data['is_active'] = $request->boolean('is_active');
-        $data['amenities'] = $this->normalizeAmenities($data['amenities_input']);
+        $data['amenities_title'] = '';
+        $data['amenities_text'] = '';
+        $data['amenities'] = [];
 
         foreach (['hero_image', 'card_image', 'gallery_image_1', 'gallery_image_2'] as $field) {
             $fileField = $field.'_file';
@@ -117,12 +120,34 @@ class ProductController extends Controller
             }
         }
 
+        $heroImage = $product->hero_image;
+
+        if ($request->hasFile('hero_image_file')) {
+            $heroImage = $data['hero_image'];
+        }
+
+        $data['hero_image'] = $heroImage;
+        $data['card_image'] = $product->card_image ?: $heroImage;
+        $data['gallery_image_1'] = $product->gallery_image_1 ?: $heroImage;
+        $data['gallery_image_2'] = $product->gallery_image_2 ?: $heroImage;
+
+        if ($request->hasFile('card_image_file')) {
+            $data['card_image'] = $data['card_image'];
+        }
+
+        if ($request->hasFile('gallery_image_1_file')) {
+            $data['gallery_image_1'] = $data['gallery_image_1'];
+        }
+
+        if ($request->hasFile('gallery_image_2_file')) {
+            $data['gallery_image_2'] = $data['gallery_image_2'];
+        }
+
         unset(
             $data['hero_image_file'],
             $data['card_image_file'],
             $data['gallery_image_1_file'],
             $data['gallery_image_2_file'],
-            $data['amenities_input'],
         );
 
         $product->fill($data)->save();
@@ -147,13 +172,9 @@ class ProductController extends Controller
         return $slug;
     }
 
-    protected function normalizeAmenities(string $input): array
+    protected function nextSortOrder(): int
     {
-        return collect(preg_split('/\r\n|\r|\n/', $input) ?: [])
-            ->map(fn (string $amenity) => trim($amenity))
-            ->filter()
-            ->values()
-            ->all();
+        return (int) Product::query()->max('sort_order') + 1;
     }
 
     protected function storeImage(UploadedFile $file): string

@@ -77,7 +77,7 @@
                     <div class="footer-bottom-area">
                         <div class="footer-menu-area">
                             <div class="footer-logo">
-                                <a href="{{ url('/') }}"><img src="/img/logo/sunugal-logo-cropped.jpeg" alt="Sunugal Habitat"></a>
+                                <a href="{{ url('/') }}"><img src="/img/logo/sunugal-logo.png" alt="Sunugal Habitat"></a>
                             </div>
                             <div class="footer-menu">
                                 <ul>

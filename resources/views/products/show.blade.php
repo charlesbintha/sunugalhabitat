@@ -95,7 +95,7 @@
           <div class="auhtor-box d-lg-block d-none">
             <div class="others-box">
               <div class="img3">
-                <img src="/img/logo/sunugal-logo-cropped.jpeg" alt="Sunugal Habitat" />
+                <img src="/img/logo/sunugal-logo.png" alt="Sunugal Habitat" />
               </div>
               <div class="text">
                 <h3>{{ $product['type'] }}</h3>
@@ -121,29 +121,41 @@
             <h2>{{ $product['title'] }}</h2>
             <div class="space20"></div>
             <p>{{ $product['summary'] }}</p>
-            <div class="space16"></div>
-            <p>{{ $product['description_1'] }}</p>
-            <div class="space16"></div>
-            <p>{{ $product['description_2'] }}</p>
-            <div class="space40"></div>
-            <h3>{{ $product['amenities_title'] }}</h3>
-            <div class="space20"></div>
-            <p>{{ $product['amenities_text'] }}</p>
-            <div class="space20"></div>
-            <div class="row">
-              @foreach ($product['amenities'] as $index => $amenity)
-                <div class="col-lg-6 col-md-6">
-                  <div class="list-area">
-                    <div class="icons">
-                      <img src="/img/icons/apartment-icon{{ ($index % 6) + 1 }}.svg" alt="" />
+            @if (! empty($product['description_1']))
+              <div class="space16"></div>
+              <p>{{ $product['description_1'] }}</p>
+            @endif
+            @if (! empty($product['description_2']))
+              <div class="space16"></div>
+              <p>{{ $product['description_2'] }}</p>
+            @endif
+            @if (! empty($product['amenities_title']) || ! empty($product['amenities_text']) || ! empty($product['amenities']))
+              <div class="space40"></div>
+              @if (! empty($product['amenities_title']))
+                <h3>{{ $product['amenities_title'] }}</h3>
+              @endif
+              @if (! empty($product['amenities_text']))
+                <div class="space20"></div>
+                <p>{{ $product['amenities_text'] }}</p>
+              @endif
+              @if (! empty($product['amenities']))
+                <div class="space20"></div>
+                <div class="row">
+                  @foreach ($product['amenities'] as $index => $amenity)
+                    <div class="col-lg-6 col-md-6">
+                      <div class="list-area">
+                        <div class="icons">
+                          <img src="/img/icons/apartment-icon{{ ($index % 6) + 1 }}.svg" alt="" />
+                        </div>
+                        <div class="text">
+                          <a href="#">{{ $amenity }}</a>
+                        </div>
+                      </div>
                     </div>
-                    <div class="text">
-                      <a href="#">{{ $amenity }}</a>
-                    </div>
-                  </div>
+                  @endforeach
                 </div>
-              @endforeach
-            </div>
+              @endif
+            @endif
             <div class="space40"></div>
             <h3>Galerie du produit</h3>
             <div class="space20"></div>

@@ -50,19 +50,24 @@ class Product extends Model
 
     public function toPublicArray(): array
     {
+        $heroImage = $this->hero_image ?: '/img/all-images/property/property-img4.png';
+        $cardImage = $this->card_image ?: $heroImage;
+        $galleryImage1 = $this->gallery_image_1 ?: $heroImage;
+        $galleryImage2 = $this->gallery_image_2 ?: $heroImage;
+
         return [
             'slug' => $this->slug,
             'title' => $this->title,
             'type' => $this->type,
             'location' => $this->location,
             'price' => $this->price,
-            'surface' => $this->surface,
+            'surface' => $this->surface ?: 'A confirmer',
             'beds' => $this->beds,
-            'baths' => $this->baths,
-            'hero_image' => $this->hero_image,
-            'card_image' => $this->card_image,
-            'gallery_image_1' => $this->gallery_image_1,
-            'gallery_image_2' => $this->gallery_image_2,
+            'baths' => $this->baths ?: 'A confirmer',
+            'hero_image' => $heroImage,
+            'card_image' => $cardImage,
+            'gallery_image_1' => $galleryImage1,
+            'gallery_image_2' => $galleryImage2,
             'summary' => $this->summary,
             'description_1' => $this->description_1,
             'description_2' => $this->description_2,

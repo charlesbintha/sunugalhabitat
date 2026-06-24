@@ -23,7 +23,7 @@
             <div class="sunugal-campaign-modal__copy">
                 <span class="sunugal-campaign-modal__eyebrow">Allez les Lions</span>
                 <div class="sunugal-campaign-modal__brand">
-                    <img src="{{ asset('img/logo/sunugal-logo-cropped.jpeg') }}" alt="Logo Sunugal Habitat">
+                    <img src="{{ asset('img/logo/sunugal-logo.png') }}" alt="Logo Sunugal Habitat">
                     <span>Sunugal Habitat</span>
                 </div>
 

@@ -6,7 +6,7 @@
                 <div class="col-lg-12">
                     <div class="header-elements">
                         <div class="site-logo">
-                            <a href="{{ url('/') }}"><img src="/img/logo/sunugal-logo-cropped.jpeg" alt="Sunugal Habitat"></a>
+                            <a href="{{ url('/') }}"><img src="/img/logo/sunugal-logo.png" alt="Sunugal Habitat"></a>
                         </div>
                         <div class="main-menu">
                             <ul>
@@ -39,7 +39,7 @@
         <div class="col-12">
             <div class="mobile-header-elements">
                 <div class="mobile-logo">
-                    <a href="{{ url('/') }}"><img src="/img/logo/sunugal-logo-cropped.jpeg" alt="Sunugal Habitat"></a>
+                    <a href="{{ url('/') }}"><img src="/img/logo/sunugal-logo.png" alt="Sunugal Habitat"></a>
                 </div>
                 <div class="mobile-nav-icon dots-menu">
                     <i class="fa-solid fa-bars"></i>
@@ -52,7 +52,7 @@
 <div class="mobile-sidebar mobile-sidebar3">
     <div class="logosicon-area">
         <div class="logos">
-            <img src="/img/logo/sunugal-logo-cropped.jpeg" alt="Sunugal Habitat">
+            <img src="/img/logo/sunugal-logo.png" alt="Sunugal Habitat">
         </div>
         <div class="menu-close">
             <i class="fa-solid fa-xmark"></i>
