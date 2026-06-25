@@ -36,28 +36,28 @@
                                     <div class="col-lg-5 col-md-6">
                                         <div class="instagram-posts" data-aos="zoom-in-up" data-aos-duration="800">
                                             <div class="img1">
-                                                <img src="/img/all-images/others/others-img7.png" alt="">
+                                                <img src="/img/senegal/dakar-place-independance.jpg" alt="Dakar centre-ville">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-7 col-md-6" data-aos="zoom-in-up" data-aos-duration="1000">
                                         <div class="instagram-posts">
                                             <div class="img1">
-                                                <img src="/img/all-images/others/others-img8.png" alt="">
+                                                <img src="/img/senegal/dakar-renaissance.jpg" alt="Monument de la Renaissance africaine">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-7 col-md-6" data-aos="zoom-in-up" data-aos-duration="1100">
                                         <div class="instagram-posts">
                                             <div class="img1">
-                                                <img src="/img/all-images/others/others-img9.png" alt="">
+                                                <img src="/img/senegal/lac-rose.jpg" alt="Lac Rose">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-5 col-md-6" data-aos="zoom-in-up" data-aos-duration="1200">
                                         <div class="instagram-posts">
                                             <div class="img1">
-                                                <img src="/img/all-images/others/others-img10.png" alt="">
+                                                <img src="/img/senegal/saint-louis.jpg" alt="Saint-Louis du Senegal">
                                             </div>
                                         </div>
                                     </div>

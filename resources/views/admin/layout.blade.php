@@ -215,6 +215,54 @@
       flex-wrap: wrap;
       margin-top: 10px;
     }
+    .panel-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+    .metric-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 18px 45px rgba(15,47,87,.06);
+    }
+    .metric-card strong {
+      display: block;
+      font-size: 28px;
+      margin-top: 8px;
+    }
+    .info-list {
+      display: grid;
+      gap: 12px;
+    }
+    .info-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+    .info-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .info-label {
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .stack {
+      display: grid;
+      gap: 18px;
+    }
+    .empty-state {
+      padding: 22px;
+      border: 1px dashed var(--line);
+      border-radius: 14px;
+      color: var(--muted);
+      text-align: center;
+    }
     .login-shell {
       min-height: 100vh;
       display: grid;
@@ -239,7 +287,9 @@
         padding: 20px;
       }
       .grid-2,
-      .grid-4 {
+      .grid-4,
+      .panel-grid,
+      .info-row {
         grid-template-columns: 1fr;
       }
     }
@@ -247,5 +297,6 @@
 </head>
 <body>
   @yield('body')
+  @stack('scripts')
 </body>
 </html>

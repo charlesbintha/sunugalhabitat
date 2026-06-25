@@ -3,6 +3,8 @@
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\AdminUserController;
+use App\Http\Controllers\Admin\ClientController as AdminClientController;
+use App\Http\Controllers\Admin\InvoiceController as AdminInvoiceController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SitemapController;
@@ -37,6 +39,26 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::put('/admins/{adminUser}', [AdminUserController::class, 'update'])->name('admins.update');
         Route::patch('/admins/{adminUser}/statut', [AdminUserController::class, 'toggle'])->name('admins.toggle');
         Route::delete('/admins/{adminUser}', [AdminUserController::class, 'destroy'])->name('admins.destroy');
+
+        Route::get('/clients', [AdminClientController::class, 'index'])->name('clients.index');
+        Route::get('/clients/creer', [AdminClientController::class, 'create'])->name('clients.create');
+        Route::post('/clients', [AdminClientController::class, 'store'])->name('clients.store');
+        Route::get('/clients/{client}/modifier', [AdminClientController::class, 'edit'])->name('clients.edit');
+        Route::put('/clients/{client}', [AdminClientController::class, 'update'])->name('clients.update');
+        Route::patch('/clients/{client}/statut', [AdminClientController::class, 'toggle'])->name('clients.toggle');
+        Route::delete('/clients/{client}', [AdminClientController::class, 'destroy'])->name('clients.destroy');
+
+        Route::get('/factures', [AdminInvoiceController::class, 'index'])->name('invoices.index');
+        Route::get('/factures/creer', [AdminInvoiceController::class, 'create'])->name('invoices.create');
+        Route::post('/factures', [AdminInvoiceController::class, 'store'])->name('invoices.store');
+        Route::get('/factures/{invoice}', [AdminInvoiceController::class, 'show'])->name('invoices.show');
+        Route::get('/factures/{invoice}/modifier', [AdminInvoiceController::class, 'edit'])->name('invoices.edit');
+        Route::put('/factures/{invoice}', [AdminInvoiceController::class, 'update'])->name('invoices.update');
+        Route::patch('/factures/{invoice}/valider', [AdminInvoiceController::class, 'validateInvoice'])->name('invoices.validate');
+        Route::patch('/factures/{invoice}/brouillon', [AdminInvoiceController::class, 'revertToDraft'])->name('invoices.revert');
+        Route::post('/factures/{invoice}/envoyer', [AdminInvoiceController::class, 'send'])->name('invoices.send');
+        Route::get('/factures/{invoice}/pdf', [AdminInvoiceController::class, 'downloadPdf'])->name('invoices.pdf');
+        Route::delete('/factures/{invoice}', [AdminInvoiceController::class, 'destroy'])->name('invoices.destroy');
     });
 
     Route::post('/logout', [AdminAuthController::class, 'destroy'])->middleware('auth')->name('logout');

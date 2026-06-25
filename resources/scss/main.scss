@@ -115,6 +115,9 @@ body.sunugal-campaign-modal-open {
   position: fixed;
   inset: 0;
   z-index: 9999;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
   padding: 14px;
   opacity: 0;
   visibility: hidden;
@@ -140,7 +143,7 @@ body.sunugal-campaign-modal-open {
   z-index: 1;
   width: min(980px, 100%);
   max-height: min(90vh, 820px);
-  margin: min(3vh, 20px) auto;
+  margin: 92px auto 0;
   background:
     radial-gradient(circle at top left, rgba(220, 186, 83, .22), transparent 38%),
     linear-gradient(135deg, #0d2748 0%, #163860 54%, #1e4a75 100%);
@@ -398,8 +401,8 @@ body.sunugal-home-body .blog3-section-area .blog-boxarea .content-area {
 @media (max-width: 991.98px) {
   .sunugal-campaign-modal__dialog {
     width: min(720px, 100%);
-    max-height: calc(100vh - 28px);
-    margin: 0 auto;
+    max-height: calc(100vh - 112px);
+    margin: 74px auto 0;
   }
 
   .sunugal-campaign-modal__content {
@@ -433,11 +436,15 @@ body.sunugal-home-body .blog3-section-area .blog-boxarea .content-area {
 }
 
 @media (max-width: 575.98px) {
+  .sunugal-campaign-modal {
+    padding: 10px;
+  }
+
   .sunugal-campaign-modal__dialog {
     width: 100%;
     border-radius: 24px;
-    max-height: calc(100vh - 16px);
-    margin: 0 auto;
+    max-height: calc(100vh - 96px);
+    margin: 62px auto 0;
   }
 
   .sunugal-campaign-modal__close {

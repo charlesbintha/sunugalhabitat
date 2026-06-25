@@ -3,7 +3,7 @@
 @section('meta_title', 'Contact agence immobiliere Dakar Point E | Sunugal Habitat')
 @section('meta_description', 'Contactez Sunugal Habitat a Dakar Point E pour la gestion locative, le syndic de copropriete, la vente ou l achat de biens immobiliers.')
 @section('meta_canonical', url('/pages/contact'))
-@section('meta_image', asset('img/all-images/hero/hero-img1.png'))
+@section('meta_image', asset('img/senegal/dakar-place-independance.jpg'))
 @section('schema')
   @php
     $contactSchema = [
@@ -21,10 +21,10 @@
   <!-- ===== HERO AREA STARTS ======= -->
   <div class="inner-main-hero-area">
     <div class="img1">
-      <img src="/img/all-images/hero/hero-img1.png" alt="" />
+      <img src="/img/senegal/dakar-place-independance.jpg" alt="Dakar et la Place de l Independance" />
     </div>
     <div class="img2">
-      <img src="/img/all-images/hero/hero-img2.png" alt="" />
+      <img src="/img/senegal/dakar-renaissance.jpg" alt="Monument de la Renaissance africaine" />
     </div>
     <div class="container">
       <div class="row">
@@ -141,7 +141,7 @@
         </div>
         <div class="col-lg-8">
           <div class="maps-area">
-            <img src="/img/all-images/contact/contact-img1.png" alt="Sunugal Habitat Dakar Point E" />
+            <img src="/img/senegal/dakar-savana.jpg" alt="Cadre de vie a Dakar" />
           </div>
         </div>
       </div>

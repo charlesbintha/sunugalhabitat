@@ -4,6 +4,7 @@ use App\Http\Middleware\EnsureAdmin;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use Illuminate\Http\Request;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -15,6 +16,26 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'admin' => EnsureAdmin::class,
         ]);
+
+        $middleware->redirectGuestsTo(function (Request $request) {
+            if ($request->is('admin') || $request->is('admin/*')) {
+                return route('admin.login');
+            }
+
+            return route('home');
+        });
+
+        $middleware->redirectUsersTo(function (Request $request) {
+            if (
+                ($request->is('admin') || $request->is('admin/*'))
+                && $request->user()?->is_admin
+                && $request->user()?->is_active
+            ) {
+                return route('admin.products.index');
+            }
+
+            return route('home');
+        });
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

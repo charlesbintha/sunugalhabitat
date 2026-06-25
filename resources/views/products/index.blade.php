@@ -3,7 +3,7 @@
 @section('meta_title', 'Produits immobiliers a Dakar | Sunugal Habitat')
 @section('meta_description', 'Decouvrez les produits immobiliers presentes par Sunugal Habitat a Dakar: appartements, villas et immeubles avec accompagnement local et transparent.')
 @section('meta_canonical', route('products.index'))
-@section('meta_image', asset('img/all-images/hero/hero-img1.png'))
+@section('meta_image', asset('img/senegal/dakar-ocean-pool.jpg'))
 @section('schema')
   @php
     $collectionSchema = [
@@ -20,10 +20,10 @@
 @section('content')
   <div class="inner-main-hero-area">
     <div class="img1">
-      <img src="/img/all-images/hero/hero-img1.png" alt="" />
+      <img src="/img/senegal/dakar-ocean-pool.jpg" alt="Panorama immobilier a Dakar" />
     </div>
     <div class="img2">
-      <img src="/img/all-images/hero/hero-img2.png" alt="" />
+      <img src="/img/senegal/dakar-place-independance.jpg" alt="Dakar centre-ville" />
     </div>
     <div class="container">
       <div class="row">

@@ -6,6 +6,8 @@
 
   <nav class="admin-nav">
     <a href="{{ route('admin.products.index') }}" class="{{ request()->routeIs('admin.products.*') ? 'active' : '' }}">Produits</a>
+    <a href="{{ route('admin.clients.index') }}" class="{{ request()->routeIs('admin.clients.*') ? 'active' : '' }}">Clients</a>
+    <a href="{{ route('admin.invoices.index') }}" class="{{ request()->routeIs('admin.invoices.*') ? 'active' : '' }}">Factures</a>
     <a href="{{ route('admin.admins.index') }}" class="{{ request()->routeIs('admin.admins.*') ? 'active' : '' }}">Admins</a>
     <a href="{{ route('home') }}" target="_blank" rel="noopener noreferrer">Voir le site</a>
   </nav>

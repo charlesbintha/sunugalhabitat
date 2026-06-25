@@ -4,7 +4,7 @@
 @section('meta_title', 'Sunugal Habitat | Agence immobiliere a Dakar Point E')
 @section('meta_description', 'Sunugal Habitat, agence immobiliere a Dakar Point E. Gestion locative, syndic de copropriete, vente et achat avec une equipe de proximite, reactive et transparente.')
 @section('meta_canonical', route('home'))
-@section('meta_image', asset('img/all-images/hero/hero-img6.png'))
+@section('meta_image', asset('img/senegal/dakar-place-independance.jpg'))
 @section('schema')
   @php
     $organizationSchema = [
@@ -75,7 +75,7 @@
   <div class="header-carousel-area3 owl-carousel">
     <div class="main-hero-area">
       <div class="img1">
-        <img src="/img/all-images/hero/hero-img6.png" alt="" />
+        <img src="/img/senegal/dakar-place-independance.jpg" alt="Vue de Dakar et de la Place de l Independance" />
       </div>
       <div class="bg-elements">
         <img src="/img/elements/elements7.png" alt="" class="elements2" />
@@ -128,7 +128,7 @@
 
     <div class="main-hero-area">
       <div class="img1">
-        <img src="/img/all-images/hero/hero-img5.png" alt="" />
+        <img src="/img/senegal/dakar-savana.jpg" alt="Ambiance balneaire a Dakar" />
       </div>
       <div class="bg-elements">
         <img src="/img/elements/elements7.png" alt="" class="elements2" />
@@ -165,7 +165,7 @@
             <div class="auhtor-box">
               <div class="others-box">
                 <div class="img3">
-                  <img src="/img/all-images/others/others-img1.png" alt="" />
+                  <img src="/img/senegal/dakar-renaissance.jpg" alt="Monument de la Renaissance africaine a Dakar" />
                 </div>
                 <div class="text">
                   <h3>Point E, Dakar</h3>
@@ -181,7 +181,7 @@
 
     <div class="main-hero-area">
       <div class="img1">
-        <img src="/img/all-images/hero/hero-img1.png" alt="" />
+        <img src="/img/senegal/dakar-ocean-pool.jpg" alt="Residence et vue ocean a Dakar" />
       </div>
       <div class="bg-elements">
         <img src="/img/elements/elements7.png" alt="" class="elements2" />
@@ -218,7 +218,7 @@
             <div class="auhtor-box">
               <div class="others-box">
                 <div class="img3">
-                  <img src="/img/all-images/others/others-img3.png" alt="" />
+                  <img src="/img/senegal/dakar-modern-hotel.jpg" alt="Architecture contemporaine a Dakar" />
                 </div>
                 <div class="text">
                   <h3>Mandat clair</h3>
@@ -241,10 +241,10 @@
         <div class="col-lg-6">
           <div class="property-images-area">
             <div class="img1 reveal image-anime">
-              <img src="/img/all-images/property/property-img4.png" alt="" />
+              <img src="/img/senegal/dakar-place-independance.jpg" alt="Centre-ville de Dakar" />
             </div>
             <div class="img2 reveal image-anime">
-              <img src="/img/all-images/property/property-img5.png" alt="" />
+              <img src="/img/senegal/dakar-seaside-hotel.jpg" alt="Hotel en bord de mer a Dakar" />
             </div>
             <div class="elements reveal image-anime">
               <img src="/img/elements/elements9.png" alt="" />
@@ -294,7 +294,7 @@
         <div class="col-lg-3 col-md-6" data-aos="zoom-in-up" data-aos-duration="800">
           <div class="amenities-boxarea">
             <div class="img1">
-              <img src="/img/all-images/service/service-img4.png" alt="" />
+              <img src="/img/senegal/dakar-renaissance.jpg" alt="Patrimoine et presence locale a Dakar" />
             </div>
             <div class="space32"></div>
             <div class="content-area">
@@ -310,7 +310,7 @@
           <div class="space40 d-lg-block d-none"></div>
           <div class="amenities-boxarea">
             <div class="img1">
-              <img src="/img/all-images/service/service-img5.png" alt="" />
+              <img src="/img/senegal/dakar-place-independance.jpg" alt="Gestion immobiliere au coeur de Dakar" />
             </div>
             <div class="space32"></div>
             <div class="content-area">
@@ -325,7 +325,7 @@
         <div class="col-lg-3 col-md-6" data-aos="zoom-in-up" data-aos-duration="1100">
           <div class="amenities-boxarea">
             <div class="img1">
-              <img src="/img/all-images/service/service-img7.png" alt="" />
+              <img src="/img/senegal/dakar-modern-hotel.jpg" alt="Immobilier et transactions a Dakar" />
             </div>
             <div class="space32"></div>
             <div class="content-area">
@@ -341,7 +341,7 @@
           <div class="space40 d-lg-block d-none"></div>
           <div class="amenities-boxarea">
             <div class="img1">
-              <img src="/img/all-images/service/service-img8.png" alt="" />
+              <img src="/img/senegal/saint-louis.jpg" alt="Suivi local et terrain au Senegal" />
             </div>
             <div class="space32"></div>
             <div class="content-area">
@@ -426,13 +426,13 @@
         <div class="col-lg-6">
           <div class="about-slider-area owl-carousel">
             <div class="img1 reveal image-anime">
-              <img src="/img/all-images/about/about-img3.png" alt="" />
+              <img src="/img/senegal/lac-rose.jpg" alt="Lac Rose au Senegal" />
             </div>
             <div class="img1 reveal image-anime">
-              <img src="/img/all-images/about/about-img3.png" alt="" />
+              <img src="/img/senegal/saint-louis.jpg" alt="Saint-Louis au Senegal" />
             </div>
             <div class="img1 reveal image-anime">
-              <img src="/img/all-images/about/about-img3.png" alt="" />
+              <img src="/img/senegal/dakar-renaissance.jpg" alt="Monument de la Renaissance africaine" />
             </div>
           </div>
           <div class="space30"></div>
@@ -443,7 +443,7 @@
                 <div class="space12"></div>
                 <p>Une equipe ancree a Dakar</p>
                 <div class="space20"></div>
-                <img src="/img/all-images/about/about-img6.png" alt="" />
+                <img src="/img/senegal/dakar-place-independance.jpg" alt="Vue de Dakar" />
                 <div class="space18"></div>
                 <p>Suivi local et reactivite terrain</p>
               </div>
@@ -452,7 +452,7 @@
             <div class="col-lg-6 col-md-6">
               <div class="about-video-area">
                 <div class="img1 image-anime reveal">
-                  <a href="https://wa.me/221761991908" target="_blank" rel="noopener noreferrer"><img src="/img/all-images/about/about-img5.png" alt="" /></a>
+                  <a href="https://wa.me/221761991908" target="_blank" rel="noopener noreferrer"><img src="/img/senegal/dakar-savana.jpg" alt="Dakar en bord de mer" /></a>
                 </div>
                 <div class="play-btn">
                   <a href="https://wa.me/221761991908" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
@@ -465,7 +465,7 @@
           <div class="space30 d-lg-none d-block"></div>
           <div class="about-widget-images">
             <div class="img1 reveal image-anime">
-              <img src="/img/all-images/about/about-img4.png" alt="" />
+              <img src="/img/senegal/dakar-modern-hotel.jpg" alt="Cadre immobilier moderne a Dakar" />
             </div>
             <div class="content-area">
               <div class="text">
@@ -516,7 +516,7 @@
       <div class="row">
         <div class="col-lg-10 m-auto">
           <div class="rotate-img">
-            <img src="/img/all-images/gallery/gallery-img14.png" alt="" />
+            <img src="/img/senegal/dakar-renaissance.jpg" alt="Monument de la Renaissance africaine a Dakar" />
             <img src="/img/elements/elements3.png" alt="" class="elements3" />
           </div>
         </div>
@@ -549,7 +549,7 @@
           <div class="space86"></div>
           <div class="testimonial-video-area" data-aos="zoom-in-up" data-aos-duration="1000">
             <div class="img1">
-              <img src="/img/all-images/testimonial/testimonial-img3.png" alt="" />
+              <img src="/img/senegal/dakar-ocean-pool.jpg" alt="Vue ocean et cadre de vie a Dakar" />
             </div>
             <div class="icons">
               <a href="https://wa.me/221761991908" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
@@ -564,7 +564,7 @@
                 <div class="verical-boxarea">
                   <div class="images-area">
                     <div class="img1">
-                      <img src="/img/all-images/testimonial/testimonial-img4.png" alt="" />
+                      <img src="/img/senegal/dakar-place-independance.jpg" alt="Reactivite locale a Dakar" />
                     </div>
                     <div class="text">
                       <a href="#">Reactivite</a>
@@ -593,7 +593,7 @@
                 <div class="verical-boxarea">
                   <div class="images-area">
                     <div class="img1">
-                      <img src="/img/all-images/testimonial/testimonial-img5.png" alt="" />
+                      <img src="/img/senegal/saint-louis.jpg" alt="Suivi terrain au Senegal" />
                     </div>
                     <div class="text">
                       <a href="#">Transparence</a>
@@ -622,7 +622,7 @@
                 <div class="verical-boxarea">
                   <div class="images-area">
                     <div class="img1">
-                      <img src="/img/all-images/testimonial/testimonial-img4.png" alt="" />
+                      <img src="/img/senegal/dakar-renaissance.jpg" alt="Confiance et ancrage senegalais" />
                     </div>
                     <div class="text">
                       <a href="#">Confiance</a>
@@ -669,10 +669,10 @@
         <div class="col-lg-5">
           <div class="images-area">
             <div class="img1 image-anime reveal">
-              <img src="/img/all-images/others/others-img11.png" alt="" />
+              <img src="/img/senegal/dakar-seaside-hotel.jpg" alt="Residence en bord de mer a Dakar" />
             </div>
             <div class="img2 image-anime reveal">
-              <img src="/img/all-images/others/others-img12.png" alt="" />
+              <img src="/img/senegal/dakar-ocean-pool.jpg" alt="Cadre de vie haut de gamme a Dakar" />
             </div>
             <div class="elements">
               <img src="/img/elements/elements8.png" alt="" />
@@ -721,7 +721,7 @@
         <div class="col-lg-4 col-md-6" data-aos="zoom-in-up" data-aos-duration="800">
           <div class="blog-boxarea">
             <div class="img1 image-anime">
-              <img src="/img/all-images/blog/blog-img1.png" alt="" />
+              <img src="/img/senegal/dakar-modern-hotel.jpg" alt="Mandat clair et patrimoine immobilier a Dakar" />
             </div>
             <div class="content-area">
               <ul>
@@ -739,7 +739,7 @@
         <div class="col-lg-4 col-md-6" data-aos="zoom-in-up" data-aos-duration="1000">
           <div class="blog-boxarea">
             <div class="img1 image-anime">
-              <img src="/img/all-images/blog/blog-img2.png" alt="" />
+              <img src="/img/senegal/dakar-place-independance.jpg" alt="Suivi local au coeur de Dakar" />
             </div>
             <div class="content-area">
               <ul>
@@ -757,7 +757,7 @@
         <div class="col-lg-4 col-md-6" data-aos="zoom-in-up" data-aos-duration="1200">
           <div class="blog-boxarea">
             <div class="img1 image-anime">
-              <img src="/img/all-images/blog/blog-img3.png" alt="" />
+              <img src="/img/senegal/saint-louis.jpg" alt="Accompagnement immobilier au Senegal" />
             </div>
             <div class="content-area">
               <ul>

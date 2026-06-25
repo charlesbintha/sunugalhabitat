@@ -72,10 +72,10 @@
 @section('content')
   <div class="inner-main-hero-area">
     <div class="img1">
-      <img src="/img/all-images/hero/hero-img1.png" alt="" />
+      <img src="/img/senegal/dakar-ocean-pool.jpg" alt="Immobilier et cadre de vie a Dakar" />
     </div>
     <div class="img2 d-lg-block d-none">
-      <img src="/img/all-images/hero/hero-img2.png" alt="" />
+      <img src="/img/senegal/dakar-place-independance.jpg" alt="Vue urbaine de Dakar" />
     </div>
     <div class="container">
       <div class="row">
