@@ -18,14 +18,14 @@ body {
   background: #eef3f8;
   font-family: DejaVu Sans, Arial, sans-serif;
   color: #1f2937;
+  font-size: 12px;
 }
 
 .invoice {
-  width: 210mm;
-  min-height: 297mm;
+  width: 100%;
   margin: 0 auto;
   background: #ffffff;
-  padding: 22mm;
+  padding: 12mm 12mm 10mm;
   position: relative;
   overflow: hidden;
 }
@@ -35,8 +35,8 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  width: 88mm;
-  height: 88mm;
+  width: 64mm;
+  height: 64mm;
   background: linear-gradient(135deg, #0f2f57, #1c4f8c);
   border-bottom-left-radius: 100%;
   opacity: .98;
@@ -53,57 +53,57 @@ body {
 }
 
 .brand-wrap {
-  width: 60%;
+  width: 58%;
 }
 
 .brand-mark {
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .brand-mark img {
-  width: 92px;
+  width: 74px;
   height: auto;
   display: block;
 }
 
 .brand h1 {
   margin: 0;
-  font-size: 26px;
+  font-size: 22px;
   color: #0f2f57;
-  letter-spacing: .5px;
+  letter-spacing: .3px;
 }
 
 .brand p {
-  margin: 6px 0 0;
-  font-size: 12px;
+  margin: 4px 0 0;
+  font-size: 11px;
   color: #64748b;
-  line-height: 1.6;
+  line-height: 1.45;
 }
 
 .invoice-title {
-  width: 40%;
+  width: 42%;
   text-align: right;
   color: #fff;
 }
 
 .invoice-title h2 {
   margin: 0;
-  font-size: 34px;
-  letter-spacing: 2px;
+  font-size: 28px;
+  letter-spacing: 1px;
 }
 
 .invoice-title span {
   display: inline-block;
-  margin-top: 8px;
-  font-size: 13px;
+  margin-top: 6px;
+  font-size: 11px;
   background: rgba(255,255,255,.18);
-  padding: 6px 12px;
-  border-radius: 20px;
+  padding: 5px 10px;
+  border-radius: 16px;
 }
 
 .info-grid {
   width: 100%;
-  margin-top: 38px;
+  margin-top: 20px;
 }
 
 .info-grid td {
@@ -113,8 +113,8 @@ body {
 
 .card {
   border: 1px solid #d9e5f4;
-  border-radius: 16px;
-  padding: 18px;
+  border-radius: 14px;
+  padding: 14px;
   background: #f8fbff;
 }
 
@@ -127,8 +127,8 @@ body {
 }
 
 .card h3 {
-  margin: 0 0 12px;
-  font-size: 13px;
+  margin: 0 0 8px;
+  font-size: 12px;
   color: #0f2f57;
   text-transform: uppercase;
   letter-spacing: .8px;
@@ -136,21 +136,22 @@ body {
 
 .card p {
   margin: 4px 0;
-  font-size: 13px;
-  line-height: 1.6;
+  font-size: 12px;
+  line-height: 1.45;
+  word-break: break-word;
 }
 
 .meta {
-  margin-top: 24px;
+  margin-top: 16px;
   width: 100%;
-  border-radius: 14px;
+  border-radius: 12px;
   overflow: hidden;
   border: 1px solid #d9e5f4;
 }
 
 .meta td {
   width: 25%;
-  padding: 13px;
+  padding: 10px;
   background: #f2f7fd;
   border-right: 1px solid #d9e5f4;
   vertical-align: top;
@@ -162,21 +163,22 @@ body {
 
 .meta small {
   display: block;
-  font-size: 10px;
+  font-size: 9px;
   color: #64748b;
   text-transform: uppercase;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
 
 .meta strong {
-  font-size: 13px;
+  font-size: 12px;
   color: #0f2f57;
 }
 
 table.items {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 30px;
+  table-layout: fixed;
+  margin-top: 18px;
 }
 
 table.items thead {
@@ -185,17 +187,18 @@ table.items thead {
 }
 
 table.items th {
-  padding: 14px 12px;
-  font-size: 12px;
+  padding: 10px 8px;
+  font-size: 10px;
   text-align: left;
   text-transform: uppercase;
 }
 
 table.items td {
-  padding: 14px 12px;
-  font-size: 13px;
+  padding: 10px 8px;
+  font-size: 11px;
   border-bottom: 1px solid #e5e7eb;
   vertical-align: top;
+  word-break: break-word;
 }
 
 table.items tbody tr:nth-child(even) {
@@ -208,51 +211,49 @@ table.items tbody tr:nth-child(even) {
 
 .badge {
   display: inline-block;
-  padding: 5px 10px;
+  padding: 4px 8px;
   background: #e8eef8;
   color: #0f2f57;
-  border-radius: 20px;
-  font-size: 11px;
+  border-radius: 16px;
+  font-size: 10px;
   font-weight: 700;
 }
 
 .summary {
-  margin-top: 28px;
+  margin-top: 16px;
   width: 100%;
 }
 
-.summary td {
-  vertical-align: top;
-}
-
 .notes {
-  width: 55%;
+  width: 100%;
   background: #f8fbff;
   border-left: 5px solid #d8b44a;
-  padding: 16px;
+  padding: 12px 14px;
   border-radius: 12px;
-  margin-right: 14px;
+  margin-top: 10px;
+  page-break-inside: avoid;
 }
 
 .notes h3 {
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   color: #0f2f57;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .notes p {
   margin: 0;
-  font-size: 12px;
-  line-height: 1.7;
+  font-size: 11px;
+  line-height: 1.45;
   color: #475569;
 }
 
 .totals {
-  width: 38%;
-  border-radius: 16px;
+  width: 100%;
+  border-radius: 14px;
   overflow: hidden;
   border: 1px solid #e7dcc0;
-  margin-left: 14px;
+  margin: 0;
+  page-break-inside: avoid;
 }
 
 .totals-row {
@@ -260,8 +261,8 @@ table.items tbody tr:nth-child(even) {
 }
 
 .totals-row td {
-  padding: 13px 16px;
-  font-size: 13px;
+  padding: 10px 14px;
+  font-size: 11px;
   border-bottom: 1px solid #e5e7eb;
 }
 
@@ -272,23 +273,24 @@ table.items tbody tr:nth-child(even) {
 .totals-final td {
   background: #0f2f57;
   color: #fff;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 800;
   border-bottom: none;
 }
 
 .payment {
-  margin-top: 28px;
-  padding: 18px;
-  border-radius: 16px;
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 14px;
   background: linear-gradient(135deg, #f8fbff, #fff8ea);
   border: 1px solid #e7dcc0;
+  page-break-inside: avoid;
 }
 
 .payment h3 {
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   color: #0f2f57;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .payment-grid {
@@ -298,14 +300,14 @@ table.items tbody tr:nth-child(even) {
 .payment-grid td {
   width: 33.33%;
   vertical-align: top;
-  padding-right: 14px;
+  padding-right: 10px;
 }
 
 .payment-grid p {
   margin: 0;
-  font-size: 12px;
+  font-size: 11px;
   color: #475569;
-  line-height: 1.6;
+  line-height: 1.45;
 }
 
 .payment-grid strong {
@@ -315,12 +317,13 @@ table.items tbody tr:nth-child(even) {
 }
 
 .footer {
-  margin-top: 26px;
+  margin-top: 8px;
   width: 100%;
-  font-size: 11px;
+  font-size: 10px;
   color: #64748b;
   border-top: 1px solid #e5e7eb;
-  padding-top: 12px;
+  padding-top: 8px;
+  page-break-inside: avoid;
 }
 
 .footer td {
@@ -333,11 +336,11 @@ table.items tbody tr:nth-child(even) {
 
 .signature span {
   display: inline-block;
-  margin-top: 35px;
+  margin-top: 24px;
   border-top: 1px solid #94a3b8;
-  padding-top: 6px;
+  padding-top: 5px;
   color: #334155;
-  min-width: 140px;
+  min-width: 110px;
   text-align: center;
 }
 
@@ -462,40 +465,35 @@ table.items tbody tr:nth-child(even) {
     </tbody>
   </table>
 
-  <table class="summary">
-    <tr>
-      <td style="width:58%;">
-        <div class="notes">
-          <h3>Notes</h3>
-          <p>
-            {{ $invoice->notes ?: 'Merci de proceder au reglement avant la date d echeance indiquee. Cette facture concerne uniquement les prestations mentionnees ci-dessus.' }}
-          </p>
-        </div>
-      </td>
-      <td style="width:42%;">
-        <div class="totals">
-          <table class="totals-row">
-            <tr>
-              <td>Sous-total</td>
-              <td>{{ number_format($invoice->subtotalAmount(), 0, ',', ' ') }} FCFA</td>
-            </tr>
-            <tr>
-              <td>Remise {{ (float) $invoice->discount_rate > 0 ? rtrim(rtrim(number_format((float) $invoice->discount_rate, 2, '.', ''), '0'), '.').'%' : '' }}</td>
-              <td>{{ number_format($invoice->discountAmount(), 0, ',', ' ') }} FCFA</td>
-            </tr>
-            <tr>
-              <td>TVA 18%</td>
-              <td>{{ number_format($invoice->vatAmount(), 0, ',', ' ') }} FCFA</td>
-            </tr>
-            <tr class="totals-final">
-              <td>Total TTC</td>
-              <td>{{ number_format($invoice->totalAmount(), 0, ',', ' ') }} FCFA</td>
-            </tr>
-          </table>
-        </div>
-      </td>
-    </tr>
-  </table>
+  <div class="summary">
+    <div class="totals">
+      <table class="totals-row">
+        <tr>
+          <td>Sous-total</td>
+          <td>{{ number_format($invoice->subtotalAmount(), 0, ',', ' ') }} FCFA</td>
+        </tr>
+        <tr>
+          <td>Remise {{ (float) $invoice->discount_rate > 0 ? rtrim(rtrim(number_format((float) $invoice->discount_rate, 2, '.', ''), '0'), '.').'%' : '' }}</td>
+          <td>{{ number_format($invoice->discountAmount(), 0, ',', ' ') }} FCFA</td>
+        </tr>
+        <tr>
+          <td>TVA 18%</td>
+          <td>{{ number_format($invoice->vatAmount(), 0, ',', ' ') }} FCFA</td>
+        </tr>
+        <tr class="totals-final">
+          <td>Total TTC</td>
+          <td>{{ number_format($invoice->totalAmount(), 0, ',', ' ') }} FCFA</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="notes">
+      <h3>Notes</h3>
+      <p>
+        {{ $invoice->notes ?: 'Merci de proceder au reglement avant la date d echeance indiquee. Cette facture concerne uniquement les prestations mentionnees ci-dessus.' }}
+      </p>
+    </div>
+  </div>
 
   <div class="payment">
     <h3>Informations de paiement</h3>
