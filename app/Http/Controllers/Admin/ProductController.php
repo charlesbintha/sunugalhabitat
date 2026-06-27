@@ -120,27 +120,27 @@ class ProductController extends Controller
             }
         }
 
-        $heroImage = $product->hero_image;
-
-        if ($request->hasFile('hero_image_file')) {
-            $heroImage = $data['hero_image'];
-        }
+        $heroImage = $request->hasFile('hero_image_file')
+            ? $data['hero_image']
+            : $product->hero_image;
 
         $data['hero_image'] = $heroImage;
-        $data['card_image'] = $product->card_image ?: $heroImage;
-        $data['gallery_image_1'] = $product->gallery_image_1 ?: $heroImage;
-        $data['gallery_image_2'] = $product->gallery_image_2 ?: $heroImage;
 
-        if ($request->hasFile('card_image_file')) {
-            $data['card_image'] = $data['card_image'];
-        }
+        $heroWasUpdated = $request->hasFile('hero_image_file');
 
-        if ($request->hasFile('gallery_image_1_file')) {
-            $data['gallery_image_1'] = $data['gallery_image_1'];
-        }
+        foreach (['card_image', 'gallery_image_1', 'gallery_image_2'] as $field) {
+            $fileField = $field.'_file';
 
-        if ($request->hasFile('gallery_image_2_file')) {
-            $data['gallery_image_2'] = $data['gallery_image_2'];
+            if ($request->hasFile($fileField)) {
+                continue;
+            }
+
+            if ($heroWasUpdated || blank($product->{$field})) {
+                $data[$field] = $heroImage;
+                continue;
+            }
+
+            $data[$field] = $product->{$field};
         }
 
         unset(

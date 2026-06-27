@@ -157,7 +157,7 @@ class InvoiceController extends Controller
     {
         return Pdf::loadView('admin.invoices.pdf', [
             'invoice' => $invoice->load('client', 'creator'),
-        ])->setPaper('a4', 'landscape')->download($invoice->pdfFilename());
+        ])->setPaper('a4', 'portrait')->download($invoice->pdfFilename());
     }
 
     public function destroy(Invoice $invoice): RedirectResponse
@@ -237,6 +237,6 @@ class InvoiceController extends Controller
     {
         return Pdf::loadView('admin.invoices.pdf', [
             'invoice' => $invoice->load('client', 'creator'),
-        ])->setPaper('a4', 'landscape')->output();
+        ])->setPaper('a4', 'portrait')->output();
     }
 }

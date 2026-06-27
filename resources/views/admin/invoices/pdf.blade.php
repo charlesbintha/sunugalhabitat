@@ -1,385 +1,530 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ $invoice->invoice_number }}</title>
-  <style>
-    @page {
-      size: A4 landscape;
-      margin: 10mm 16mm 10mm 10mm;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: #fff;
-      font-family: DejaVu Sans, Arial, Helvetica, sans-serif;
-      color: #050505;
-    }
-    .invoice {
-      position: relative;
-      width: 100%;
-      min-height: auto;
-      margin: 0;
-      background: #fff;
-      padding: 10mm 16mm 10mm 14mm;
-      overflow: hidden;
-    }
-    .invoice:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 10mm;
-      bottom: 0;
-      width: 7mm;
-      background: #d8b44a;
-      border-top-right-radius: 6mm;
-    }
-    .corner-dot {
-      position: absolute;
-      left: -3mm;
-      top: -3mm;
-      width: 12mm;
-      height: 12mm;
-      border-radius: 50%;
-      background: #f1d36c;
-    }
-    .header {
-      width: 100%;
-      margin-bottom: 10mm;
-      table-layout: fixed;
-    }
-    .header td {
-      vertical-align: top;
-      width: 50%;
-    }
-    .brand h1 {
-      margin: 0;
-      font-size: 18px;
-      letter-spacing: -1px;
-      font-weight: 900;
-      color: #0f2f57;
-    }
-    .brand p {
-      margin: 4px 0 0 3px;
-      font-size: 8px;
-      letter-spacing: .8px;
-      font-weight: 700;
-      color: #5b5b5b;
-    }
-    .title {
-      margin: 0;
-      font-size: 18px;
-      letter-spacing: 0;
-      font-family: DejaVu Sans, Arial, Helvetica, sans-serif;
-      font-weight: 900;
-      color: #0f2f57;
-      text-align: left;
-      white-space: nowrap;
-    }
-    .meta {
-      width: 100%;
-      font-size: 10px;
-      font-weight: 900;
-      border-bottom: 1px dashed #000;
-      padding-bottom: 7px;
-      margin-bottom: 6mm;
-      table-layout: fixed;
-    }
-    .meta td {
-      vertical-align: bottom;
-    }
-    .meta p {
-      margin: 0 0 4px 0;
-      line-height: 1.25;
-    }
-    .meta .right {
-      text-align: left;
-    }
-    .parties {
-      width: 100%;
-      margin-bottom: 6mm;
-      font-size: 9px;
-      line-height: 1.35;
-      font-weight: 700;
-      table-layout: fixed;
-    }
-    .parties td {
-      vertical-align: top;
-      width: 50%;
-    }
-    .parties .recipient {
-      text-align: left;
-    }
-    .party-title {
-      margin: 0 0 8px 0;
-      font-size: 10px;
-      font-weight: 900;
-      color: #0f2f57;
-    }
-    .party-text {
-      margin: 0;
-      word-break: break-word;
-    }
-    table.items {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 5mm;
-      table-layout: fixed;
-    }
-    table.items th {
-      text-align: left;
-      font-size: 9px;
-      padding: 0 0 8px 0;
-      border-bottom: 2px solid #111;
-    }
-    table.items th:nth-child(1),
-    table.items td:nth-child(1) {
-      width: 46%;
-    }
-    table.items th:nth-child(2),
-    table.items td:nth-child(2) {
-      width: 24%;
-    }
-    table.items th:nth-child(3),
-    table.items td:nth-child(3) {
-      width: 10%;
-    }
-    table.items th:nth-child(4),
-    table.items td:nth-child(4) {
-      width: 20%;
-    }
-    table.items th:nth-child(2),
-    table.items td:nth-child(2),
-    table.items th:nth-child(3),
-    table.items td:nth-child(3),
-    table.items th:nth-child(4),
-    table.items td:nth-child(4) {
-      text-align: right;
-    }
-    table.items td {
-      font-size: 9px;
-      padding: 6px 0;
-      border-bottom: 1px dotted #111;
-      vertical-align: top;
-      word-break: break-word;
-    }
-    .bottom {
-      width: 100%;
-      margin-bottom: 4mm;
-      table-layout: fixed;
-    }
-    .bottom td {
-      vertical-align: top;
-    }
-    .payment {
-      width: 44%;
-      padding-right: 10mm;
-    }
-    .totals {
-      width: 56%;
-      font-size: 10px;
-      font-weight: 900;
-    }
-    .section-title {
-      margin: 0 0 8px 0;
-      font-size: 10px;
-      font-weight: 900;
-      color: #0f2f57;
-    }
-    .payment p,
-    .terms p {
-      margin: 0;
-      font-size: 8px;
-      line-height: 1.35;
-    }
-    .payment strong {
-      font-size: 9px;
-    }
-    .totals-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .totals-table td {
-      padding: 0 0 8px 0;
-      font-size: 9px;
-      font-weight: 900;
-    }
-    .totals-table td:first-child {
-      text-align: right;
-      padding-right: 16px;
-    }
-    .totals-table td:last-child {
-      text-align: right;
-      width: 28mm;
-    }
-    .terms {
-      width: 100%;
-      margin-top: 2mm;
-    }
-    .decor {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      width: 22mm;
-      height: 22mm;
-    }
-    .bubble {
-      position: absolute;
-      border-radius: 50%;
-    }
-    .b1 { right: 82px; bottom: 126px; width: 21px; height: 21px; background: #ff914d; }
-    .b2 { right: 94px; bottom: 82px; width: 29px; height: 29px; background: #f98bd1; }
-    .b3 { right: 47px; bottom: 85px; width: 39px; height: 39px; background: #dfcfb7; }
-    .b4 { right: 34px; bottom: 27px; width: 45px; height: 45px; background: #9fd0df; }
-    .b5 { right: 114px; bottom: 48px; width: 22px; height: 22px; background: #eee; }
-    .b6 { right: -23px; bottom: -30px; width: 73px; height: 73px; background: #f2eeee; }
-    @media print {
-      body { background: #fff; }
-      .invoice { box-shadow: none; }
-    }
-  </style>
+<meta charset="UTF-8">
+<title>{{ $invoice->invoice_number }}</title>
+<style>
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #eef3f8;
+  font-family: DejaVu Sans, Arial, sans-serif;
+  color: #1f2937;
+}
+
+.invoice {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 22mm;
+  position: relative;
+  overflow: hidden;
+}
+
+.invoice::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 88mm;
+  height: 88mm;
+  background: linear-gradient(135deg, #0f2f57, #1c4f8c);
+  border-bottom-left-radius: 100%;
+  opacity: .98;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+.header td {
+  vertical-align: top;
+}
+
+.brand-wrap {
+  width: 60%;
+}
+
+.brand-mark {
+  margin-bottom: 12px;
+}
+
+.brand-mark img {
+  width: 92px;
+  height: auto;
+  display: block;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 26px;
+  color: #0f2f57;
+  letter-spacing: .5px;
+}
+
+.brand p {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.invoice-title {
+  width: 40%;
+  text-align: right;
+  color: #fff;
+}
+
+.invoice-title h2 {
+  margin: 0;
+  font-size: 34px;
+  letter-spacing: 2px;
+}
+
+.invoice-title span {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 13px;
+  background: rgba(255,255,255,.18);
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.info-grid {
+  width: 100%;
+  margin-top: 38px;
+}
+
+.info-grid td {
+  width: 50%;
+  vertical-align: top;
+}
+
+.card {
+  border: 1px solid #d9e5f4;
+  border-radius: 16px;
+  padding: 18px;
+  background: #f8fbff;
+}
+
+.card.left {
+  margin-right: 9px;
+}
+
+.card.right {
+  margin-left: 9px;
+}
+
+.card h3 {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: #0f2f57;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+}
+
+.card p {
+  margin: 4px 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.meta {
+  margin-top: 24px;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #d9e5f4;
+}
+
+.meta td {
+  width: 25%;
+  padding: 13px;
+  background: #f2f7fd;
+  border-right: 1px solid #d9e5f4;
+  vertical-align: top;
+}
+
+.meta td:last-child {
+  border-right: none;
+}
+
+.meta small {
+  display: block;
+  font-size: 10px;
+  color: #64748b;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.meta strong {
+  font-size: 13px;
+  color: #0f2f57;
+}
+
+table.items {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+table.items thead {
+  background: #0f2f57;
+  color: #fff;
+}
+
+table.items th {
+  padding: 14px 12px;
+  font-size: 12px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+table.items td {
+  padding: 14px 12px;
+  font-size: 13px;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: top;
+}
+
+table.items tbody tr:nth-child(even) {
+  background: #f8fbff;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.badge {
+  display: inline-block;
+  padding: 5px 10px;
+  background: #e8eef8;
+  color: #0f2f57;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.summary {
+  margin-top: 28px;
+  width: 100%;
+}
+
+.summary td {
+  vertical-align: top;
+}
+
+.notes {
+  width: 55%;
+  background: #f8fbff;
+  border-left: 5px solid #d8b44a;
+  padding: 16px;
+  border-radius: 12px;
+  margin-right: 14px;
+}
+
+.notes h3 {
+  margin: 0 0 8px;
+  color: #0f2f57;
+  font-size: 13px;
+}
+
+.notes p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #475569;
+}
+
+.totals {
+  width: 38%;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e7dcc0;
+  margin-left: 14px;
+}
+
+.totals-row {
+  width: 100%;
+}
+
+.totals-row td {
+  padding: 13px 16px;
+  font-size: 13px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.totals-row td:last-child {
+  text-align: right;
+}
+
+.totals-final td {
+  background: #0f2f57;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  border-bottom: none;
+}
+
+.payment {
+  margin-top: 28px;
+  padding: 18px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f8fbff, #fff8ea);
+  border: 1px solid #e7dcc0;
+}
+
+.payment h3 {
+  margin: 0 0 10px;
+  color: #0f2f57;
+  font-size: 14px;
+}
+
+.payment-grid {
+  width: 100%;
+}
+
+.payment-grid td {
+  width: 33.33%;
+  vertical-align: top;
+  padding-right: 14px;
+}
+
+.payment-grid p {
+  margin: 0;
+  font-size: 12px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.payment-grid strong {
+  display: block;
+  color: #111827;
+  margin-top: 4px;
+}
+
+.footer {
+  margin-top: 26px;
+  width: 100%;
+  font-size: 11px;
+  color: #64748b;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 12px;
+}
+
+.footer td {
+  vertical-align: bottom;
+}
+
+.signature {
+  text-align: right;
+}
+
+.signature span {
+  display: inline-block;
+  margin-top: 35px;
+  border-top: 1px solid #94a3b8;
+  padding-top: 6px;
+  color: #334155;
+  min-width: 140px;
+  text-align: center;
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .invoice {
+    margin: 0;
+    box-shadow: none;
+  }
+}
+</style>
 </head>
 <body>
-  <main class="invoice">
-    <div class="corner-dot"></div>
-    @php
-      $invoiceDescriptor = collect([
-          $invoice->typeLabel(),
-          $invoice->propertyKindLabel(),
-          $invoice->terrainDocumentLabel(),
-          $invoice->is_deposit ? 'Acompte' : null,
-      ])->filter()->implode(' - ');
-    @endphp
+@php
+  $logoPath = public_path('img/logo/sunugal-logo.png');
+  $logoDataUri = file_exists($logoPath)
+      ? 'data:image/png;base64,'.base64_encode(file_get_contents($logoPath))
+      : null;
 
-    <table class="header">
-      <tr>
-        <td style="width:68%;">
-          <div class="brand">
-            <h1>SUNUGAL HABITAT</h1>
-            <p>AGENCE IMMOBILIERE - DAKAR POINT E</p>
-          </div>
-        </td>
-        <td style="width:32%;">
-          <h2 class="title">FACTURE</h2>
-        </td>
-      </tr>
-    </table>
+  $statusLabel = $invoice->isValidated() ? 'Validee' : 'Brouillon';
+  $propertyReference = $invoice->invoice_number;
+  $propertyTypeLabel = trim(collect([
+      $invoice->typeLabel(),
+      $invoice->propertyKindLabel(),
+      $invoice->terrainDocumentLabel(),
+      $invoice->is_deposit ? 'Acompte' : null,
+  ])->filter()->implode(' - '));
+@endphp
 
-    <table class="meta">
-      <tr>
-        <td>
-          <p>DATE : {{ optional($invoice->issue_date)->format('d / m / Y') }}</p>
-          <p>ECHEANCE : {{ $invoice->due_date ? $invoice->due_date->format('d / m / Y') : '-' }}</p>
-        </td>
-        <td class="right" style="padding-left:10mm;">
-          <p>FACTURE N&deg; : {{ $invoice->invoice_number }}</p>
-          <p>STATUT : {{ strtoupper($invoice->statusLabel()) }}</p>
-        </td>
-      </tr>
-    </table>
-
-    <table class="parties">
-      <tr>
-        <td>
-          <h3 class="party-title">EMETTEUR :</h3>
-          <p class="party-text">
-            Sunugal Habitat<br>
-            info@sunugalhabitat.sn<br>
-            +221 76 199 19 08<br>
-            Dakar Point E en face UCAD
-          </p>
-        </td>
-        <td class="recipient" style="padding-left:10mm;">
-          <h3 class="party-title">DESTINATAIRE :</h3>
-          <p class="party-text">
-            {{ strtoupper($invoice->client?->name ?? 'CLIENT') }}<br>
-            {{ $invoice->client?->email ?: 'Email non renseigne' }}<br>
-            {{ $invoice->client?->phone ?: 'Telephone non renseigne' }}<br>
-            {{ trim(($invoice->client?->city ?: '').($invoice->client?->address ? ', '.$invoice->client->address : '')) ?: 'Adresse non renseignee' }}
-          </p>
-        </td>
-      </tr>
-    </table>
-
-    <table class="items">
-      <thead>
-        <tr>
-          <th>Description :</th>
-          <th>Prix unitaire :</th>
-          <th>Quantite :</th>
-          <th>Total :</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            {{ $invoice->title }}<br>
-            <span style="font-size:13px; color:#5b5b5b;">
-              {{--
-                Keep this line compact to avoid page overflow in landscape PDF.
-              --}}
-              {{ $invoiceDescriptor }}
-            </span>
-          </td>
-          <td>{{ number_format($invoice->subtotalAmount(), 0, ',', ' ') }} FCFA</td>
-          <td>1</td>
-          <td>{{ number_format($invoice->subtotalAmount(), 0, ',', ' ') }} FCFA</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <table class="bottom">
-      <tr>
-        <td class="payment">
-          <h3 class="section-title">REGLEMENT :</h3>
+<div class="invoice">
+  <table class="header">
+    <tr>
+      <td class="brand-wrap">
+        <div class="brand-mark">
+          @if ($logoDataUri)
+            <img src="{{ $logoDataUri }}" alt="Sunugal Habitat">
+          @endif
+        </div>
+        <div class="brand">
+          <h1>SUNUGAL HABITAT</h1>
           <p>
-            <strong>Mode de paiement :</strong><br>
-            A convenir avec Sunugal Habitat.<br><br>
-            <strong>Notes :</strong><br>
-            {{ $invoice->notes ?: 'Aucune note complementaire.' }}
+            Agence immobiliere & gestion locative<br>
+            Dakar, Senegal<br>
+            Tel : +221 76 199 19 08<br>
+            Email : info@sunugalhabitat.sn
           </p>
-        </td>
-        <td class="totals">
-          <table class="totals-table">
+        </div>
+      </td>
+
+      <td class="invoice-title">
+        <h2>FACTURE</h2>
+        <span>N° {{ $invoice->invoice_number }}</span>
+      </td>
+    </tr>
+  </table>
+
+  <table class="info-grid">
+    <tr>
+      <td>
+        <div class="card left">
+          <h3>Facture a</h3>
+          <p><strong>{{ $invoice->client?->name ?: 'Client' }}</strong></p>
+          <p>Adresse : {{ trim(($invoice->client?->city ?: '').($invoice->client?->address ? ', '.$invoice->client->address : '')) ?: 'Non renseignee' }}</p>
+          <p>Telephone : {{ $invoice->client?->phone ?: 'Non renseigne' }}</p>
+          <p>Email : {{ $invoice->client?->email ?: 'Non renseigne' }}</p>
+        </div>
+      </td>
+      <td>
+        <div class="card right">
+          <h3>Bien immobilier</h3>
+          <p><strong>{{ $invoice->title }}</strong></p>
+          <p>Localisation : {{ $invoice->client?->city ?: 'Dakar' }}</p>
+          <p>Reference : {{ $propertyReference }}</p>
+          <p>Type : {{ $propertyTypeLabel ?: 'Facture immobiliere' }}</p>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <table class="meta">
+    <tr>
+      <td>
+        <small>Date facture</small>
+        <strong>{{ optional($invoice->issue_date)->format('d/m/Y') }}</strong>
+      </td>
+      <td>
+        <small>Date echeance</small>
+        <strong>{{ $invoice->due_date ? $invoice->due_date->format('d/m/Y') : '-' }}</strong>
+      </td>
+      <td>
+        <small>Mode paiement</small>
+        <strong>A convenir</strong>
+      </td>
+      <td>
+        <small>Statut</small>
+        <strong>{{ $statusLabel }}</strong>
+      </td>
+    </tr>
+  </table>
+
+  <table class="items">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Type</th>
+        <th class="text-right">Qte</th>
+        <th class="text-right">Prix unitaire</th>
+        <th class="text-right">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ $invoice->title }}</td>
+        <td><span class="badge">{{ $invoice->typeLabel() }}</span></td>
+        <td class="text-right">1</td>
+        <td class="text-right">{{ number_format($invoice->subtotalAmount(), 0, ',', ' ') }} FCFA</td>
+        <td class="text-right">{{ number_format($invoice->subtotalAmount(), 0, ',', ' ') }} FCFA</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="summary">
+    <tr>
+      <td style="width:58%;">
+        <div class="notes">
+          <h3>Notes</h3>
+          <p>
+            {{ $invoice->notes ?: 'Merci de proceder au reglement avant la date d echeance indiquee. Cette facture concerne uniquement les prestations mentionnees ci-dessus.' }}
+          </p>
+        </div>
+      </td>
+      <td style="width:42%;">
+        <div class="totals">
+          <table class="totals-row">
             <tr>
-              <td>TOTAL BRUT :</td>
+              <td>Sous-total</td>
               <td>{{ number_format($invoice->subtotalAmount(), 0, ',', ' ') }} FCFA</td>
             </tr>
             <tr>
-              <td>REMISE {{ (float) $invoice->discount_rate > 0 ? rtrim(rtrim(number_format((float) $invoice->discount_rate, 2, '.', ''), '0'), '.').'%' : '' }} :</td>
+              <td>Remise {{ (float) $invoice->discount_rate > 0 ? rtrim(rtrim(number_format((float) $invoice->discount_rate, 2, '.', ''), '0'), '.').'%' : '' }}</td>
               <td>{{ number_format($invoice->discountAmount(), 0, ',', ' ') }} FCFA</td>
             </tr>
             <tr>
-              <td>TOTAL HT :</td>
-              <td>{{ number_format($invoice->netBeforeVatAmount(), 0, ',', ' ') }} FCFA</td>
-            </tr>
-            <tr>
-              <td>TVA 18% :</td>
+              <td>TVA 18%</td>
               <td>{{ number_format($invoice->vatAmount(), 0, ',', ' ') }} FCFA</td>
             </tr>
-            <tr>
-              <td>TOTAL TTC :</td>
+            <tr class="totals-final">
+              <td>Total TTC</td>
               <td>{{ number_format($invoice->totalAmount(), 0, ',', ' ') }} FCFA</td>
             </tr>
           </table>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="payment">
+    <h3>Informations de paiement</h3>
+    <table class="payment-grid">
+      <tr>
+        <td>
+          <p>Mode de paiement<strong>A convenir avec Sunugal Habitat</strong></p>
+        </td>
+        <td>
+          <p>Nature de facture<strong>{{ $propertyTypeLabel ?: 'Facture immobiliere' }}</strong></p>
+        </td>
+        <td>
+          <p>Net avant TVA<strong>{{ number_format($invoice->netBeforeVatAmount(), 0, ',', ' ') }} FCFA</strong></p>
         </td>
       </tr>
     </table>
+  </div>
 
-    <div class="terms">
-      <h3 class="section-title">TERMES & CONDITIONS</h3>
-      <p>
-        Merci de verifier les informations de cette facture des reception. Toute facture validee emise par
-        Sunugal Habitat est reputee conforme sauf retour contraire dans un delai raisonnable. Pour toute question,
+  <table class="footer">
+    <tr>
+      <td>
+        Merci de verifier les informations de cette facture des reception. Pour toute question,
         contactez l'agence a info@sunugalhabitat.sn ou par WhatsApp au +221 76 199 19 08.
-      </p>
-    </div>
-
-    <div class="decor">
-      <span class="bubble b1"></span><span class="bubble b2"></span><span class="bubble b3"></span>
-      <span class="bubble b4"></span><span class="bubble b5"></span><span class="bubble b6"></span>
-    </div>
-  </main>
+      </td>
+      <td class="signature">
+        <span>Sunugal Habitat</span>
+      </td>
+    </tr>
+  </table>
+</div>
 </body>
 </html>
