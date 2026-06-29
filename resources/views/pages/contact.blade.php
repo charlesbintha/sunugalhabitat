@@ -12,6 +12,12 @@
         'name' => 'Contact Sunugal Habitat',
         'url' => url('/pages/contact'),
         'description' => 'Page de contact de Sunugal Habitat, agence immobiliere a Dakar Point E.',
+        'mainEntity' => [
+            '@type' => 'RealEstateAgent',
+            'name' => 'Sunugal Habitat',
+            'telephone' => ['+221761991908', '+221338184202'],
+            'email' => 'info@sunugalhabitat.sn',
+        ],
     ];
   @endphp
   <script type="application/ld+json">@json($contactSchema, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE)</script>
@@ -91,8 +97,18 @@
                     <img src="/img/icons/contact-icon1.svg" alt="" />
                   </div>
                   <div class="content">
-                    <p>WhatsApp</p>
+                    <p>Mobile / WhatsApp</p>
                     <a href="tel:+221761991908">76 199 19 08</a>
+                  </div>
+                </div>
+                <div class="space20"></div>
+                <div class="contact-box">
+                  <div class="icons">
+                    <img src="/img/icons/contact-icon1.svg" alt="" />
+                  </div>
+                  <div class="content">
+                    <p>Ligne fixe</p>
+                    <a href="tel:+221338184202">33 818 42 02</a>
                   </div>
                 </div>
                 <div class="space20"></div>

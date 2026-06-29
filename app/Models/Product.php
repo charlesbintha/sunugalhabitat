@@ -20,6 +20,7 @@ class Product extends Model
         'card_image',
         'gallery_image_1',
         'gallery_image_2',
+        'gallery_images',
         'summary',
         'description_1',
         'description_2',
@@ -34,6 +35,7 @@ class Product extends Model
     {
         return [
             'amenities' => 'array',
+            'gallery_images' => 'array',
             'is_active' => 'boolean',
         ];
     }
@@ -52,8 +54,14 @@ class Product extends Model
     {
         $heroImage = $this->hero_image ?: '/img/all-images/property/property-img4.png';
         $cardImage = $this->card_image ?: $heroImage;
-        $galleryImage1 = $this->gallery_image_1 ?: $heroImage;
-        $galleryImage2 = $this->gallery_image_2 ?: $heroImage;
+        $galleryImages = $this->galleryImages();
+
+        if ($galleryImages === []) {
+            $galleryImages = [$heroImage];
+        }
+
+        $galleryImage1 = $galleryImages[0] ?? $heroImage;
+        $galleryImage2 = $galleryImages[1] ?? $galleryImage1;
 
         return [
             'slug' => $this->slug,
@@ -68,6 +76,7 @@ class Product extends Model
             'card_image' => $cardImage,
             'gallery_image_1' => $galleryImage1,
             'gallery_image_2' => $galleryImage2,
+            'gallery_images' => $galleryImages,
             'summary' => $this->summary,
             'description_1' => $this->description_1,
             'description_2' => $this->description_2,
@@ -75,5 +84,21 @@ class Product extends Model
             'amenities_text' => $this->amenities_text,
             'amenities' => $this->amenities ?? [],
         ];
+    }
+
+    public function galleryImages(): array
+    {
+        $galleryImages = collect($this->gallery_images ?? [])
+            ->filter(fn ($image) => filled($image))
+            ->values();
+
+        if ($galleryImages->isEmpty()) {
+            $galleryImages = collect([$this->gallery_image_1, $this->gallery_image_2])
+                ->filter(fn ($image) => filled($image))
+                ->unique()
+                ->values();
+        }
+
+        return $galleryImages->all();
     }
 }

@@ -9,6 +9,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Str;
+use Illuminate\Validation\ValidationException;
 
 class ProductController extends Controller
 {
@@ -55,6 +56,7 @@ class ProductController extends Controller
 
     public function destroy(Product $product): RedirectResponse
     {
+        $this->deleteManagedImages($this->productImagePaths($product));
         $product->delete();
 
         return redirect()
@@ -85,15 +87,18 @@ class ProductController extends Controller
             'baths' => ['nullable', 'string', 'max:50'],
             'hero_image_file' => ['nullable', 'image', 'max:5120'],
             'card_image_file' => ['nullable', 'image', 'max:5120'],
-            'gallery_image_1_file' => ['nullable', 'image', 'max:5120'],
-            'gallery_image_2_file' => ['nullable', 'image', 'max:5120'],
+            'gallery_files' => ['nullable', 'array'],
+            'gallery_files.*' => ['image', 'max:5120'],
+            'remove_card_image' => ['nullable', 'boolean'],
+            'remove_gallery_images' => ['nullable', 'array'],
+            'remove_gallery_images.*' => ['nullable', 'integer'],
             'summary' => ['required', 'string'],
             'description_1' => ['nullable', 'string'],
             'description_2' => ['nullable', 'string'],
         ]);
 
         if (! $request->hasFile('hero_image_file') && blank($product->hero_image)) {
-            throw \Illuminate\Validation\ValidationException::withMessages([
+            throw ValidationException::withMessages([
                 'hero_image_file' => 'L image hero est obligatoire.',
             ]);
         }
@@ -111,46 +116,66 @@ class ProductController extends Controller
         $data['amenities_title'] = '';
         $data['amenities_text'] = '';
         $data['amenities'] = [];
-
-        foreach (['hero_image', 'card_image', 'gallery_image_1', 'gallery_image_2'] as $field) {
-            $fileField = $field.'_file';
-
-            if ($request->hasFile($fileField)) {
-                $data[$field] = $this->storeImage($request->file($fileField));
-            }
-        }
+        $existingPaths = $this->productImagePaths($product);
 
         $heroImage = $request->hasFile('hero_image_file')
-            ? $data['hero_image']
+            ? $this->storeImage($request->file('hero_image_file'))
             : $product->hero_image;
 
-        $data['hero_image'] = $heroImage;
-
-        $heroWasUpdated = $request->hasFile('hero_image_file');
-
-        foreach (['card_image', 'gallery_image_1', 'gallery_image_2'] as $field) {
-            $fileField = $field.'_file';
-
-            if ($request->hasFile($fileField)) {
-                continue;
-            }
-
-            if ($heroWasUpdated || blank($product->{$field})) {
-                $data[$field] = $heroImage;
-                continue;
-            }
-
-            $data[$field] = $product->{$field};
+        if (blank($heroImage)) {
+            throw ValidationException::withMessages([
+                'hero_image_file' => 'L image hero est obligatoire.',
+            ]);
         }
+
+        $cardImage = $product->card_image;
+
+        if ($request->hasFile('card_image_file')) {
+            $cardImage = $this->storeImage($request->file('card_image_file'));
+        } elseif ($request->boolean('remove_card_image')) {
+            $cardImage = null;
+        }
+
+        $galleryImages = collect($product->galleryImages());
+
+        $removeIndexes = collect($request->input('remove_gallery_images', []))
+            ->map(fn ($index) => (int) $index)
+            ->filter(fn ($index) => $index >= 0)
+            ->unique()
+            ->sortDesc()
+            ->values();
+
+        foreach ($removeIndexes as $index) {
+            $galleryImages->forget($index);
+        }
+
+        $galleryImages = $galleryImages->values();
+
+        foreach ($request->file('gallery_files', []) as $file) {
+            $galleryImages->push($this->storeImage($file));
+        }
+
+        $galleryImages = $galleryImages
+            ->filter(fn ($image) => filled($image))
+            ->values();
+
+        $data['hero_image'] = $heroImage;
+        $data['card_image'] = $cardImage;
+        $data['gallery_images'] = $galleryImages->all();
+        $data['gallery_image_1'] = $galleryImages->get(0);
+        $data['gallery_image_2'] = $galleryImages->get(1);
 
         unset(
             $data['hero_image_file'],
             $data['card_image_file'],
-            $data['gallery_image_1_file'],
-            $data['gallery_image_2_file'],
+            $data['gallery_files'],
+            $data['remove_card_image'],
+            $data['remove_gallery_images'],
         );
 
         $product->fill($data)->save();
+
+        $this->deleteManagedImages(array_diff($existingPaths, $this->productImagePaths($product)));
     }
 
     protected function buildUniqueSlug(string $source, Product $product): string
@@ -189,5 +214,45 @@ class ProductController extends Controller
         $file->move($directory, $filename);
 
         return '/uploads/products/'.$filename;
+    }
+
+    protected function productImagePaths(Product $product): array
+    {
+        return collect([
+            $product->hero_image,
+            $product->card_image,
+            $product->gallery_image_1,
+            $product->gallery_image_2,
+            ...$product->galleryImages(),
+        ])
+            ->filter(fn ($path) => filled($path))
+            ->unique()
+            ->values()
+            ->all();
+    }
+
+    protected function deleteManagedImages(array $paths): void
+    {
+        foreach ($paths as $path) {
+            $this->deleteManagedImage($path);
+        }
+    }
+
+    protected function deleteManagedImage(?string $path): void
+    {
+        if (! $this->isManagedUpload($path)) {
+            return;
+        }
+
+        $absolutePath = public_path(ltrim($path, '/'));
+
+        if (is_file($absolutePath)) {
+            @unlink($absolutePath);
+        }
+    }
+
+    protected function isManagedUpload(?string $path): bool
+    {
+        return filled($path) && str_starts_with($path, '/uploads/products/');
     }
 }

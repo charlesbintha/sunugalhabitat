@@ -14,7 +14,7 @@
         'url' => route('home'),
         'image' => asset('img/logo/sunugal-logo.png'),
         'logo' => asset('img/logo/sunugal-logo.png'),
-        'telephone' => '+221761991908',
+        'telephone' => ['+221761991908', '+221338184202'],
         'email' => 'info@sunugalhabitat.sn',
         'address' => [
             '@type' => 'PostalAddress',
@@ -698,6 +698,10 @@
                 <span class="text">76 199 19 08</span>
               </a>
             </div>
+            <div class="space16"></div>
+            <p data-aos="fade-left" data-aos-duration="1200">
+              Ligne fixe : <a href="tel:+221338184202">33 818 42 02</a>
+            </p>
           </div>
         </div>
       </div>

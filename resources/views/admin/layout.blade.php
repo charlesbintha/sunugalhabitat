@@ -155,6 +155,44 @@
       font-size: 13px;
       margin-top: 6px;
     }
+    .image-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 12px;
+    }
+    .image-preview-card {
+      margin-top: 12px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fbfcfd;
+      padding: 14px;
+    }
+    .image-preview-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+      background: #eef2f6;
+    }
+    .image-preview-meta {
+      margin-top: 10px;
+      display: grid;
+      gap: 4px;
+    }
+    .image-preview-meta strong {
+      font-size: 14px;
+    }
+    .image-preview-meta span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    .image-remove-option {
+      margin-top: 12px;
+      align-items: flex-start;
+    }
     .checkbox {
       display: flex;
       align-items: center;

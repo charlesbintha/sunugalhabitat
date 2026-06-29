@@ -4,8 +4,14 @@
 @section('meta_description', $product['summary'])
 @section('meta_canonical', route('products.show', $product['slug']))
 @section('meta_image', asset(ltrim($product['hero_image'], '/')))
+@section('body_attribute', 'sunugal-product-body')
 @section('schema')
   @php
+    $galleryImages = collect($product['gallery_images'] ?? [
+        $product['gallery_image_1'],
+        $product['gallery_image_2'],
+    ])->filter()->values()->all();
+
     $productOffer = [
         '@type' => 'Offer',
         'availability' => 'https://schema.org/InStock',
@@ -26,11 +32,12 @@
         '@type' => 'Product',
         'name' => $product['title'],
         'description' => $product['summary'],
-        'image' => [
-            asset(ltrim($product['hero_image'], '/')),
-            asset(ltrim($product['gallery_image_1'], '/')),
-            asset(ltrim($product['gallery_image_2'], '/')),
-        ],
+        'image' => collect([$product['hero_image'], ...$galleryImages])
+            ->filter()
+            ->unique()
+            ->map(fn ($image) => asset(ltrim($image, '/')))
+            ->values()
+            ->all(),
         'brand' => [
             '@type' => 'Brand',
             'name' => 'Sunugal Habitat',
@@ -112,8 +119,8 @@
   <div class="apartment-details-left sp6">
     <div class="container">
       <div class="row">
-        <div class="col-lg-7 m-auto">
-          <div class="apartment-author-area pdright">
+        <div class="col-12">
+          <div class="apartment-author-area pdright sunugal-product-content">
             <div class="img1">
               <img src="{{ $product['hero_image'] }}" alt="{{ $product['title'] }}" />
             </div>
@@ -159,23 +166,18 @@
             <div class="space40"></div>
             <h3>Galerie du produit</h3>
             <div class="space20"></div>
-            <p>Photos de presentation du produit en attendant l'integration progressive des visuels definitifs.</p>
+            <p>Photos de presentation du produit. Ajoutez-en autant que necessaire depuis l administration.</p>
             <div class="space10"></div>
             <div class="row">
-              <div class="col-lg-6 col-md-6">
-                <div class="images-area">
-                  <div class="img2">
-                    <img src="{{ $product['gallery_image_1'] }}" alt="{{ $product['title'] }}" />
+              @foreach ($galleryImages as $galleryImage)
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                  <div class="images-area sunugal-gallery-card">
+                    <div class="img2">
+                      <img src="{{ $galleryImage }}" alt="{{ $product['title'] }}" />
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-lg-6 col-md-6">
-                <div class="images-area">
-                  <div class="img1">
-                    <img src="{{ $product['gallery_image_2'] }}" alt="{{ $product['title'] }}" />
-                  </div>
-                </div>
-              </div>
+              @endforeach
             </div>
             <div class="space32"></div>
             <div class="apartment-contactbox">
